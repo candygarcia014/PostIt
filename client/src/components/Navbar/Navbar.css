@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Proza+Libre:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+.NavBar { 
+    margin-left: auto; 
+} 
+
+.navbar {
+    background: #032626;
+    border: 1px solid rgba(0, 0, 0, 0.53);
+    color: white;
+}
+
+.nav-link {
+    color: white !important ;
+    font-family: 'Proza Libre', sans-serif;
+    font-size: smaller;
+}
+
+.nav-link:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+#SearchBar {
+    background-color: rgba(108, 108, 108, 0.5);
+    color: white;
+    font-family: 'Proza Libre', sans-serif;
+    font-size: smaller;
+}
+
+
+.LoginBtn {
+    color: white !important;
+    font-family: 'Proza Libre', sans-serif;
+    font-size: smaller;
+
+}
+
+.RegisterBtn {
+    color: white;
+    font-family: 'Proza Libre', sans-serif;
+
+}
+
+.RegisterBtn:hover {
+    color: lightgrey;
+    font-family: 'Proza Libre', sans-serif;
+
+}

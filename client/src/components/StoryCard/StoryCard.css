@@ -1,0 +1,17 @@
+
+.story-card {
+    display: block !important;
+    margin-left: 15vw;
+    margin-bottom: 2vw;
+    margin-top: 2vw;
+    min-height: 16rem;
+    min-width: 40rem;
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    box-sizing: border-box;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 3px;
+    border-color: white;
+
+    }
+

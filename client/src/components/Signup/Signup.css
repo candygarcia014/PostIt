@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora&display=swap');
+
+h1 {
+  font-family: 'Sora', sans-serif;
+  font-size: 30px;
+  border-radius: 50px;
+  padding-top:5%;
+  opacity: 0.8;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 20%;
+  margin-top: 50;
+  margin-right: auto;
+  margin-bottom: 50;
+  margin-left: auto;
+}
+.btn-secondary{
+margin-right:20px ;
+  
+}

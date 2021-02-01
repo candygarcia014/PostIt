@@ -1,0 +1,21 @@
+.Card.Body {
+position: absolute;
+width: 676px;
+height: 369px;
+left: calc(50% - 676px/2 - 19px);
+top: 282px;
+background: #FFFFFF;
+border: 1px solid rgba(0, 0, 0, 0.4);
+box-sizing: border-box;
+box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.25);
+border-radius: 3px;
+}
+
+.image{
+    display: grid;
+    align-content: flex-end;
+}
+
+h1 {
+    margin-bottom: 10rem;
+}

@@ -1,0 +1,34 @@
+.meta-data-date-time {
+    font-style: italic;
+}
+
+.meta-data-username {
+    text-transform: uppercase;
+    font-style: normal;
+    text-decoration: underline;
+}
+
+.meta-data {
+    font-size: small;
+}
+
+
+/* 
+.btn-group>.btn-group {
+    border-radius: 5px !important;
+} */
+
+
+.btn-primary {
+    margin: 0 auto 10% !important;
+    border-radius: 10px !important;
+}
+
+
+.comment-share-button {
+    float: right !important;
+}
+
+.card:hover {
+    box-shadow: 0 0 12px 3px rgba(0, 0, 0, 0.08);
+}

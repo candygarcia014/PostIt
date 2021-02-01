@@ -1,0 +1,60 @@
+.AvatarImage {
+    
+    position: relative;
+    width: 140px;
+    margin: auto;
+    box-sizing: border-box;
+    filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.25));
+    border-radius: 250px;
+}
+.card-img-top {
+    display: block;
+    margin-top: 5rem;
+    margin-left: -2rem;
+    /* margin-right: auto; */
+    box-sizing: border-box;
+    filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.25));
+    border-radius: 50%;
+    overflow: hidden;
+    max-width: 200px;
+    max-height: 200px;
+    height: 100vw;
+    width: 100vw;
+
+}
+
+
+.Username {
+    margin-top: 2rem;
+    text-align: center;
+    position: relative;
+}
+.FullName {
+    margin-top: 4rem;
+    text-align: center;
+    position: relative;
+    font-size: smaller;
+}
+.Bio {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+}
+.BioCard {
+    padding: 2rem;
+    text-align: center;
+    width: 50%;
+    /* border-color: white; */
+}
+
+.updateBtn {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: xx-small;
+}
+
+.bioForm {
+    border: none;
+}

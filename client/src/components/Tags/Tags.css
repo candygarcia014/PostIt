@@ -1,0 +1,14 @@
+
+
+.tag-spacing {
+    border-radius: 5px !important;
+    /* background-color: white !important;
+    border-color: black !important;
+    color: black !important; */
+}
+
+.btn-group-toggle {
+    display: flex;
+    justify-content: center;
+}
+
