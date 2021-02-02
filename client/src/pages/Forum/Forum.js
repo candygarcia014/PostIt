@@ -5,7 +5,6 @@ import CategoryMobile from './../../components/CategoryMobile/CategoryMobile';
 import { Container, Row, Col } from 'react-bootstrap';
 import BackToTop from '../../components/BackToTop/BackToTop';
 import './Forum.css';
-import OtherWidgets from '../../components/OtherWidgets/OtherWidgets';
 import MakePost from '../../components/MakePost/MakePost';
 import Api from "../../utils/Api"
 
@@ -99,7 +98,6 @@ const Forum = () => {
           </Row>
           <Row>
             <Col xs={12}>
-              <OtherWidgets />
             </Col>
           </Row>
         </Col>
@@ -132,7 +130,6 @@ const Forum = () => {
         <Col xs={2} sm={12} lg={2}>
           <Row>
             <Col xs={12}>
-              <OtherWidgets />
             </Col>
           </Row>
         </Col>
