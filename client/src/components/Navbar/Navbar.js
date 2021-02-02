@@ -65,6 +65,7 @@ history.push ("/login")
           <FormControl type="text" placeholder="Search" className="mr-sm-2" id="SearchBar" />
         </Form>
         
+      
 {!isLoggedin ? (
         <Button className="LoginBtn" variant="outline-secondary"><Link to='/Register' className="RegisterBtn">Login / Sign Up</Link></Button> 
 ): ( //logout button shows up if they are logged in 
