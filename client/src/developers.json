@@ -6,29 +6,17 @@
       "image": "https://github.com/ShanniSnax/self-care-pirates/blob/main/client/src/components/images/Candy.png?raw=true",
       "linkedin": "https://www.linkedin.com/in/candy-garcia014/"
     },
+    
     {
         "id": 2,
-        "name": "Laurynas Juzva",
-        "github": "https://github.com/Juzva8",
-        "image": "https://github.com/ShanniSnax/self-care-pirates/blob/main/client/src/components/images/Laurynas.jpg?raw=true",
-        "linkedin": "https://www.linkedin.com/in/laurynas-j-88427319a"
-    },
-    {
-        "id": 3,
         "name": "Tammy Nguyen",
         "github": "https://github.com/ttngu",
         "image": "https://github.com/ShanniSnax/self-care-pirates/blob/main/client/src/components/images/tammy.jpg?raw=true",
         "linkedin": "https://www.linkedin.com/in/tamngu/"
     },
+    
     {
-        "id": 4,
-        "name": "Shanni Suissa",
-        "github": "https://github.com/ShanniSnax",
-        "image": "https://github.com/ShanniSnax/self-care-pirates/blob/main/client/src/components/images/Shanni.jpeg?raw=true",
-        "linkedin": "https://www.linkedin.com/in/shanni-suissa-70a6b274/"
-    },
-    {
-        "id": 5,
+        "id": 3,
         "name": "Cathlene Converse",
         "github": "https://github.com/cgconverse",
         "image": "https://github.com/ShanniSnax/self-care-pirates/blob/main/client/src/components/images/Cathlene.jpg?raw=true",
