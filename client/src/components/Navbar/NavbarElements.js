@@ -5,7 +5,7 @@ import styled from 'styled-components';
 export const Nav = styled.nav`
   font-family: Roboto, SANS-SERIF;
   font-size: smaller;
-  background: #032626;
+  background: black;
   height: 80px;
   display: flex;
   justify-content: left;

@@ -35,7 +35,7 @@ history.push ("/login")
   return (
 
 
-    <Navbar expand="lg">
+    <Navbar expand="lg" >
       
       <Link to='/'><img src ={LogoCropped.default} alt="logo" style={{"height":"3rem", "margin":"0.5rem"}}/></Link>
       <Navbar.Toggle aria-controls="basic-navbar-nav" variant="outline-secondary"/>

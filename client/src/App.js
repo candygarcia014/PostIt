@@ -11,6 +11,8 @@ import PostPage from "./pages/PostPage/PostPage";
 import SignIn from "./pages/SignIn";
 import ProtectedRoute from "./components/ProtectedRoute";
 import CommentPage from './components/MakeComment/MakeComment'
+import background from '../src/components/images/Background.jpg'
+
 
 
 function App() {
@@ -18,6 +20,16 @@ function App() {
     <Router>
       <NavBar />
       <Switch>
+        <div
+        style={{
+          display: 'fluid',
+          justifyContent: 'center',
+          alignItems: 'center',
+          // height: '100vh',
+          backgroundImage: `url(${background})`,
+          backgroundSize: `100%`,
+        }}
+      >
         <Route path='/' exact component={LandingPage} />
         <ProtectedRoute path='/forum'>
           <Forum />
@@ -30,6 +42,7 @@ function App() {
         <Route path='/register' component={Register} />
         <Route path='/login' component={SignIn} />
         {/* <Route path='/post' component={PostPage} /> */}
+      </div>
       </Switch>
     </Router>
   );

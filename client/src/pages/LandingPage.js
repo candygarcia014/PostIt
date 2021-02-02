@@ -14,7 +14,7 @@ const LandingPage = () => {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        height: '90vh',
+        height: '100vh',
         backgroundImage: `url(${background})`,
         backgroundSize: `cover`,
       }}
