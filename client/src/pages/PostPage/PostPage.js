@@ -95,7 +95,6 @@ console.log(commentData);
         <Col xs={2} sm={12} lg={2}>
           <Row>
             <Col xs={12}>
-              <OtherWidgets />
             </Col>
           </Row>
         </Col>

@@ -45,7 +45,7 @@ history.push ("/login")
           <Link
             to="/forum"
             className={window.location.pathname === "/forum" ? "nav-link active" : "nav-link"}>
-            Forum
+            Posts
           </Link>
           <Link
             to="/our-story"

@@ -1,8 +1,8 @@
 import React from 'react';
 import Row from 'react-bootstrap/Row';
-import '../components/images/SCP.gif';
+import '../components/images/Logo.gif';
 
-const logo = require('../components/images/SCP.gif')
+const logo = require('../components/images/Logo.gif')
 
 
 const LandingPage = () => {
