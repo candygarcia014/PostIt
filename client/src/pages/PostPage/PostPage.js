@@ -6,7 +6,6 @@ import CategoryMobile from './../../components/CategoryMobile/CategoryMobile';
 import { Container, Row, Col } from 'react-bootstrap';
 import BackToTop from '../../components/BackToTop/BackToTop';
 import './PostPage.css';
-import OtherWidgets from '../../components/OtherWidgets/OtherWidgets';
 import MakeComment from '../../components/MakeComment/MakeComment';
 import Comments from '../../components/Comments/Comments';
 import PostCard from './../../components/PostCard/PostCard';
@@ -96,7 +95,6 @@ console.log(commentData);
         <Col xs={2} sm={12} lg={2}>
           <Row>
             <Col xs={12}>
-              <OtherWidgets />
             </Col>
           </Row>
         </Col>

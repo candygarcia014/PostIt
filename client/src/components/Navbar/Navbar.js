@@ -1,12 +1,12 @@
 import React, {useState, useEffect} from 'react';
 import { Link } from "react-router-dom";
 import '../Navbar/Navbar.css';
-import '../images/SCP.png';
+import '../images/Logo.png';
 import {Navbar, Nav, Form, FormControl, Button, NavLink} from 'react-bootstrap';
 import Api from "../../utils/Api"
 import { useHistory, Redirect, useLocation} from 'react-router-dom';
 
-const LogoCropped = require('../images/SCPCropped.png')
+const LogoCropped = require('../images/Logo.png')
 
 const NavBar = () => {
   //Setting is loggedin as false by default
@@ -35,7 +35,7 @@ history.push ("/login")
   return (
 
 
-    <Navbar expand="lg">
+    <Navbar expand="lg" >
       
       <Link to='/'><img src ={LogoCropped.default} alt="logo" style={{"height":"3rem", "margin":"0.5rem"}}/></Link>
       <Navbar.Toggle aria-controls="basic-navbar-nav" variant="outline-secondary"/>
@@ -45,7 +45,7 @@ history.push ("/login")
           <Link
             to="/forum"
             className={window.location.pathname === "/forum" ? "nav-link active" : "nav-link"}>
-            Forum
+            Posts
           </Link>
           <Link
             to="/our-story"
@@ -65,6 +65,7 @@ history.push ("/login")
           <FormControl type="text" placeholder="Search" className="mr-sm-2" id="SearchBar" />
         </Form>
         
+      
 {!isLoggedin ? (
         <Button className="LoginBtn" variant="outline-secondary"><Link to='/Register' className="RegisterBtn">Login / Sign Up</Link></Button> 
 ): ( //logout button shows up if they are logged in 

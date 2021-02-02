@@ -1,8 +1,10 @@
 import React from 'react';
 import Row from 'react-bootstrap/Row';
-import '../components/images/SCP.gif';
+import '../components/images/Logo.gif';
+import background from '../components/images/Background.jpg'
 
-const logo = require('../components/images/SCP.gif')
+
+const logo = require('../components/images/Logo.gif')
 
 
 const LandingPage = () => {
@@ -12,7 +14,9 @@ const LandingPage = () => {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        height: '90vh'
+        height: '100vh',
+        backgroundImage: `url(${background})`,
+        backgroundSize: `cover`,
       }}
     >
       <div className="Container">
