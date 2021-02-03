@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import NavBar from '../src/components/Navbar/Navbar';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
@@ -15,7 +15,13 @@ import background from '../src/components/images/Background.jpg'
 
 
 
-function App() {
+function App() {  
+  const [user, setUser] = useState("");
+
+  const setLogin = (data) => {
+    setUser(data);
+  }
+
   return (
     <Router>
       <NavBar />
@@ -32,7 +38,8 @@ function App() {
       >
         <Route path='/' exact component={LandingPage} />
         <ProtectedRoute path='/forum'>
-          <Forum />
+          <Forum 
+          user={user}/>
         </ProtectedRoute>
         <ProtectedRoute path='/user'>
           <User />
@@ -40,7 +47,8 @@ function App() {
         <Route path='/post/:postId' component={PostPage} />
         <Route path='/our-story' component={OurStory} />
         <Route path='/register' component={Register} />
-        <Route path='/login' component={SignIn} />
+        <Route path='/login' component={SignIn} 
+          setLogin = {setLogin}/>
         {/* <Route path='/post' component={PostPage} /> */}
       </div>
       </Switch>

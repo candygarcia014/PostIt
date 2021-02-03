@@ -14,13 +14,11 @@ const Login = (props) => {
       username: username,
       password: password,
     }).then((res) => {
-      console.log(res);
       if (res.data.token) {
         localStorage.setItem("token", JSON.stringify(res.data.token));
         
         // Stores the username and full name for the profile page
-        localStorage.setItem("username", (res.config.data));
-
+        localStorage.setItem("username", (JSON.stringify({username: JSON.parse(res.config.data).username, id: res.data.id})));
         history.push("/user");
       }
     });

@@ -55,12 +55,13 @@ import Api from "../../utils/Api"
 //   }
 // ]
 
-const Forum = () => {
+const Forum = (user) => {
   const [data, setData] = useState();
   const [username, setUsername] = useState();
 //useEffect prevents it from running more than once 
   useEffect(() => {
     getAllPost();
+
     setUsername(JSON.parse(localStorage.getItem('username')))
     //run what is in useEffect again / refresh the data and poppulate new posts at the top. 
   }, [data]);
@@ -106,7 +107,7 @@ const Forum = () => {
         <Col xs={8} sm={12} lg={8}>
             <Row>
               <Col xs={12}>
-                <MakePost username={username.username}/>
+                <MakePost user={username.id}/>
               </Col>
             </Row>
             {/* //these are the requirements for the posts */}

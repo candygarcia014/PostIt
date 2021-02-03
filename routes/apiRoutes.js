@@ -41,7 +41,8 @@ router.post("/signup", (req, res) => {
 //login route
 router.post("/login", passport.authenticate("local"), (req, res) => {
   const { id } = req.user;
-  res.status(200).json({ token: jwt.sign({ id }), token_type: "Bearer" });
+  console.log(res.req.user._id);
+  res.status(200).json({ token: jwt.sign({ id }), token_type: "Bearer", id: req.user._id });
 });
 //logout route
 router.get("/logout", (req, res) => {
@@ -115,6 +116,7 @@ router.post("/upload/:userId", async (req, res) => {
 router.get("/posts/:id", (req, res) => {
   Posts.findById(req.params.id)
     .populate("comments")
+    .populate("user")
     .then((data) => {
         console.log(data)
       res.json(data);

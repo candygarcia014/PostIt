@@ -24,7 +24,7 @@ const PostPage = () => {
   }, []);
 
   const getPost = async (id) => {
-    const res = await API.getSinglePost(id);
+    const res = await API.getSinglePost(id);  
     console.log(res);
     setPostData(res.data);
     setCommentData(res.data.comments);
