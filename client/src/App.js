@@ -27,8 +27,7 @@ function App() {
           justifyContent: 'center',
           alignItems: 'center',
           // height: '100vh',
-          backgroundImage: `url(${background})`,
-          backgroundSize: `100%`,
+          height: "100%"
         }}
       >
         <Route path='/' exact component={LandingPage} />

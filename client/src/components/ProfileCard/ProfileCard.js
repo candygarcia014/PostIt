@@ -60,10 +60,10 @@ function ProfileCard() {
         return `${user.firstName} ${user.lastName}`
     }
     return (
-        <div className="Container">
+        <div className="Container profile">
             {/* User Photo */}
             <Row>
-                <Col xs={12}>
+                <Col xs={12}> 
                     <Avatar image={image} style={{"max-height":"250px", "max-width": "250px", "height":"100%", }}/>
                     <PhotoModal />
                 </Col>
