@@ -8,9 +8,9 @@ import CommentModal from '../CommentModal/CommentModal.js';
 
 
 const PostCard = (props) => {
-    const history = useHistory();
+    const history = useHistory();            
+    const [postid, setPostid] = useState(0);    
     const [show, setShow] = useState(false);
-    const [postid, setPostid] = useState(0);
     const truncatedPost = props.body?.substring(0, 200) + "...";
 
     const handleShare = (id) => {
