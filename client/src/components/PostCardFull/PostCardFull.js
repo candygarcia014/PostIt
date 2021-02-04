@@ -1,3 +1,5 @@
+// Trunkcated/Extended Post on a new page
+
 import React from 'react';
 import './PostCardFull.css';
 import Button from 'react-bootstrap/Button';
@@ -29,6 +31,7 @@ const PostCardFull = (props) => {
             <ButtonGroup className="comment-share-button">
             {/* <Button as="input" type="button" value="Comment" data-id={props.id}/>{' '} */}
             {/* need to add popout  */}
+            {/* <Button onClick={ handleShare }  as="input" type="submit" value="Share" />{' '} */}
             </ButtonGroup>    
                  
         </Card.Body>
