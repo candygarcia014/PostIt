@@ -58,3 +58,9 @@
 .bioForm {
     border: none;
 }
+
+
+.profile .row{
+    max-width: 100vw;
+}
+
