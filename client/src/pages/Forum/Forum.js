@@ -55,16 +55,17 @@ import Api from "../../utils/Api"
 //   }
 // ]
 
-const Forum = (user) => {
+const Forum = () => {
   const [data, setData] = useState();
   const [username, setUsername] = useState();
 //useEffect prevents it from running more than once 
   useEffect(() => {
     getAllPost();
-
     setUsername(JSON.parse(localStorage.getItem('username')))
     //run what is in useEffect again / refresh the data and poppulate new posts at the top. 
-  }, [data]);
+  }, []);
+
+  useEffect(()=>{},[data])
 //this is the API to get all posts on forum pg
   const getAllPost = async () => {
     try {
@@ -88,7 +89,7 @@ const Forum = (user) => {
       <Row>
 
         {/* left side widgets */}
-        <Col xs={2} sm={12} lg={2}>
+        <Col xs={12} sm={12} lg={2}>
           <Row>
             <Col xs={12} className="category-desktop">
               <CategoryWidget />
@@ -104,7 +105,7 @@ const Forum = (user) => {
         </Col>
 
         {/* posts */}
-        <Col xs={8} sm={12} lg={8}>
+        <Col xs={12} sm={12} lg={8}>
             <Row>
               <Col xs={12}>
                 <MakePost user={username.id}/>
@@ -128,7 +129,7 @@ const Forum = (user) => {
         </Col>
 
         {/* right side widgets */}
-        <Col xs={2} sm={12} lg={2}>
+        <Col xs={12} sm={12} lg={2}>
           <Row>
             <Col xs={12}>
             </Col>

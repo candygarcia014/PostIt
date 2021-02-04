@@ -16,11 +16,6 @@ import background from '../src/components/images/Background.jpg'
 
 
 function App() {  
-  const [user, setUser] = useState("");
-
-  const setLogin = (data) => {
-    setUser(data);
-  }
 
   return (
     <Router>
@@ -38,8 +33,7 @@ function App() {
       >
         <Route path='/' exact component={LandingPage} />
         <ProtectedRoute path='/forum'>
-          <Forum 
-          user={user}/>
+          <Forum />
         </ProtectedRoute>
         <ProtectedRoute path='/user'>
           <User />
@@ -47,8 +41,7 @@ function App() {
         <Route path='/post/:postId' component={PostPage} />
         <Route path='/our-story' component={OurStory} />
         <Route path='/register' component={Register} />
-        <Route path='/login' component={SignIn} 
-          setLogin = {setLogin}/>
+        <Route path='/login' component={SignIn}/>
         {/* <Route path='/post' component={PostPage} /> */}
       </div>
       </Switch>

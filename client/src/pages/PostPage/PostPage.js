@@ -33,7 +33,7 @@ const PostPage = () => {
   if (!postData) return <h1>Loading...</h1>;
 
   console.log(postData);
-console.log(commentData);
+  console.log(commentData);
 
   return (
     <Container fluid className="forum-container">
