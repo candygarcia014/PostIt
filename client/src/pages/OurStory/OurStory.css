@@ -5,6 +5,7 @@ height: 369px;
 left: calc(50% - 676px/2 - 19px);
 top: 282px;
 background: #FFFFFF;
+color: #4d4d4d;
 border: 1px solid rgba(0, 0, 0, 0.4);
 box-sizing: border-box;
 box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.25);
@@ -18,4 +19,9 @@ border-radius: 3px;
 
 h1 {
     margin-bottom: 10rem;
+    color: #4d4d4d;
+}
+
+.our-story-text {
+    color: #4d4d4d;
 }
