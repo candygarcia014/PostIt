@@ -11,10 +11,10 @@ const postsSchema = new Schema({
         type: String,
         required: "post need a text",
     },
-    username: {
-        type: String,
-        required: true,
-    },
+    user: [{
+        type: Schema.Types.ObjectId,
+        ref: "User"
+    }],
     totalBolts: {
         type: Number,
         required: false,
@@ -30,6 +30,11 @@ const postsSchema = new Schema({
             ref: "Comments"
         }
     ],
+    likes: {
+        type: Number,
+        required: true,
+        default: 0
+    }
   
 });
 

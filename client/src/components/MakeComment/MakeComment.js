@@ -20,8 +20,9 @@ const MakeComment = ({ postId, setCommentData}) => {
     const { username, id } = decode(localStorage.getItem("token"));
     const data = {
       body: text,
-      username,
+      user: id,
     };
+    console.log(data, postId,);
     const updatedPost = await Api.createComments(data, postId, id);
     setText("");
     setCommentData(updatedPost.data.comments)

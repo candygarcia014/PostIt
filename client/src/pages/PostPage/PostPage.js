@@ -24,7 +24,7 @@ const PostPage = () => {
   }, []);
 
   const getPost = async (id) => {
-    const res = await API.getSinglePost(id);
+    const res = await API.getSinglePost(id);  
     console.log(res);
     setPostData(res.data);
     setCommentData(res.data.comments);
@@ -33,7 +33,7 @@ const PostPage = () => {
   if (!postData) return <h1>Loading...</h1>;
 
   console.log(postData);
-console.log(commentData);
+  console.log(commentData);
 
   return (
     <Container fluid className="forum-container">

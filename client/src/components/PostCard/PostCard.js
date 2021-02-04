@@ -1,15 +1,16 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './PostCard.css';
 import { useHistory } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import Card from 'react-bootstrap/Card';
+import CommentModal from '../CommentModal/CommentModal.js';
 
 
 const PostCard = (props) => {
-
-
     const history = useHistory();
+    const [show, setShow] = useState(false);
+    const [postid, setPostid] = useState(0);
     const truncatedPost = props.body?.substring(0, 200) + "...";
 
     const handleShare = (id) => {
@@ -23,10 +24,23 @@ const PostCard = (props) => {
     }
 
     const handleredirct = e => {
+        
         const id  = e.target.getAttribute("data-id")
         history.push("/post/" + id);
     };
+
+    const handleComment = e =>{
+        const id  = e.target.getAttribute("data-id");
+        setPostid(id);
+        handleShow();
+    } 
+  
+
+    const handleClose = () => {
+        setShow(false);};
+    const handleShow = () => setShow(true);
     return (
+        <>
         <Card className="p-0 my-2">
         <Card.Body>
             <Card.Title>{props.title}</Card.Title>
@@ -38,11 +52,18 @@ const PostCard = (props) => {
                 {truncatedPost}
             </Card.Text>
             <ButtonGroup className="comment-share-button">
-            <Button variant="primary" as="input" type="button" value="Comment" data-id={props.id} onClick={handleredirct}/>{' '}
+            <Button variant="primary" as="input" type="button" value="Comments" data-id={props.id} onClick={handleComment}/>{' '}
             <Button variant="primary" onClick={() => handleShare(props.id) } as="input" type="submit" value="Share" />{' '}
             </ButtonGroup>           
         </Card.Body>
         </Card>
+        <CommentModal
+            onHide = {handleClose}
+            handleClose = {handleClose}
+            show = {show}
+            postid = {postid}
+            />
+        </>
     )};
 
 export default PostCard;

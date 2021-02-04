@@ -10,7 +10,7 @@ function TagsMobile() {
     const handleChange = (val) => setValue(val);
   
     return (
-      <ToggleButtonGroup size='sm' type="checkbox" value={value} onChange={handleChange}>
+      <ToggleButtonGroup size='sm' className="flex-wrap" type="checkbox" value={value} onChange={handleChange}>
         <ToggleButton className="tag-spacing" value={1}>SKIN</ToggleButton>
         <ToggleButton className="tag-spacing" value={2}>HAIR</ToggleButton>
         <ToggleButton className="tag-spacing" value={3}>BODY</ToggleButton>
