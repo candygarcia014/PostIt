@@ -14,8 +14,10 @@ const CommentModal = (props) => {
     },[props.postid])
 
     const getComments = async () => {
-        const res = await API.getSinglePost(props.postid);
-        setCommentData(res.data.comments);
+        if(props.postid!==0){
+            const res = await API.getSinglePost(props.postid);
+            setCommentData(res.data.comments);
+        }
     }
 
     return (
