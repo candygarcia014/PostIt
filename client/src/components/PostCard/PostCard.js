@@ -1,3 +1,5 @@
+// Post component on the Forum page!!
+
 import React, {useState} from 'react';
 import './PostCard.css';
 import { useHistory } from 'react-router-dom';
@@ -41,8 +43,8 @@ const PostCard = (props) => {
     const handleShow = () => setShow(true);
     return (
         <>
-        <Card className="p-0 my-2">
-        <Card.Body>
+        <Card className="p-0 my-2" id="PostBody">
+        <Card.Body >
             <Card.Title>{props.title}</Card.Title>
             <Card.Subtitle 
                 className="mb-2 text-muted meta-data-date-time meta-data">
