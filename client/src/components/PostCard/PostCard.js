@@ -53,7 +53,7 @@ const PostCard = (props) => {
             </Card.Text>
             <ButtonGroup className="comment-share-button">
             <Button variant="primary" as="input" type="button" value="Comments" data-id={props.id} onClick={handleComment}/>{' '}
-            {/* <Button variant="primary" onClick={() => handleShare(props.id) } as="input" type="submit" value="Share" />{' '} */}
+
             </ButtonGroup>           
         </Card.Body>
         </Card>
