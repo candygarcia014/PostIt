@@ -1,3 +1,5 @@
+// Create Post on Forum Page
+
 import React, {useState} from 'react';
 import Card from 'react-bootstrap/Card';
 import Form from 'react-bootstrap/Form';
