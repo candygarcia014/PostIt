@@ -1,3 +1,5 @@
+// Create Post on Forum Page
+
 import React, {useState} from 'react';
 import Card from 'react-bootstrap/Card';
 import Form from 'react-bootstrap/Form';
@@ -37,7 +39,7 @@ const MakePost = ({ user }) => {
     }
 
     return (
-    <Card className="p-0 my-2">
+    <Card className="p-0 my-2" id="CreatePostBody">
     <Card.Body>
 
     <Form>        
