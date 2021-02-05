@@ -1,3 +1,4 @@
+// Comments that appear on truncated post page and inside comment modal
 import React from 'react';
 import Card from 'react-bootstrap/Card';
 import './Comments.css';

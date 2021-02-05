@@ -1,3 +1,4 @@
+// Create comment on truncated post page
 import React, { useState } from "react";
 import decode from "jwt-decode";
 import Card from "react-bootstrap/Card";
