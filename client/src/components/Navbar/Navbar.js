@@ -1,12 +1,12 @@
 import React, {useState, useEffect} from 'react';
 import { Link } from "react-router-dom";
 import '../Navbar/Navbar.css';
-import '../images/Logo.png';
+import '../images/LogoWhite.png';
 import {Navbar, Nav, Form, FormControl, Button, NavLink} from 'react-bootstrap';
 import Api from "../../utils/Api"
 import { useHistory, Redirect, useLocation} from 'react-router-dom';
 
-const LogoCropped = require('../images/Logo.png')
+const LogoCropped = require('../images/LogoWhite.png')
 
 const NavBar = () => {
   //Setting is loggedin as false by default
