@@ -5,3 +5,9 @@
     justify-content: center;
 }
 
+#CategoryWidget {
+    background: rgba(221, 221, 221, 0.6);
+    border: 1px solid #292929;
+    box-shadow: -7px 10px 10px 5px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+}
