@@ -9,6 +9,8 @@ function Tags() {
     const [value, setValue] = useState([1, 2, 3, 4, 5, 6]);
   
     const handleChange = (val) => setValue(val);
+
+    
   
     return (
       // <ToggleButtonGroup size='sm' vertical={true} type="checkbox" value={value} onChange={handleChange}>
@@ -20,13 +22,14 @@ function Tags() {
       //   <ToggleButton className="tag-spacing" value={6}>NAILS</ToggleButton>
       // </ToggleButtonGroup>     
 
-      <DropdownButton id="dropdown-basic-button" title="FILTER" >
-      <Dropdown.Item href="#/action-1">SKIN</Dropdown.Item>
-      <Dropdown.Item href="#/action-2">HAIR</Dropdown.Item>
-      <Dropdown.Item href="#/action-3">BODY</Dropdown.Item>
-      <Dropdown.Item href="#/action-3">MIND</Dropdown.Item>
-      <Dropdown.Item href="#/action-3">STYLE</Dropdown.Item>
-      <Dropdown.Item href="#/action-3">NAILS</Dropdown.Item>
+      <DropdownButton id="dropdown-basic-button" title="Filter By:" >
+      <Dropdown.Header>Categories</Dropdown.Header>
+      <Dropdown.Item href="#/action-1">Skin</Dropdown.Item>
+      <Dropdown.Item href="#/action-2">Hair</Dropdown.Item>
+      <Dropdown.Item href="#/action-3">Body</Dropdown.Item>
+      <Dropdown.Item href="#/action-3">Mind</Dropdown.Item>
+      <Dropdown.Item href="#/action-3">Style</Dropdown.Item>
+      <Dropdown.Item href="#/action-3">Nails</Dropdown.Item>
       </DropdownButton>
     );
   }
