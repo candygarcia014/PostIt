@@ -21,8 +21,8 @@ const CommentModal = (props) => {
     }
 
     return (
-        <Modal show={props.show} onHide={props.handleClose}>
-            <Modal.Header>
+        <Modal show={props.show} onHide={props.handleClose} className="CommentModal">
+            <Modal.Header >
             <Container>
             {commentData?.map(({ body, username, date, _id }) => (
             <Row key={_id}>
