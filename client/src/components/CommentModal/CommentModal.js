@@ -5,10 +5,8 @@ import MakeComment from '../MakeComment/MakeComment.js'
 import API from '../../utils/Api'
 import Comments from '../Comments/Comments.js'
 
-const CommentModal = (props) => {
-    let text, updateText, submit = "";    
+const CommentModal = (props) => {  
     const [commentData, setCommentData] = useState([]);
-
     useEffect(() => {            
         getComments();
     },[props.postid])
@@ -24,10 +22,10 @@ const CommentModal = (props) => {
         <Modal show={props.show} onHide={props.handleClose} className="CommentModal">
             <Modal.Header >
             <Container>
-            {commentData?.map(({ body, username, date, _id }) => (
+            {commentData?.map(({ body, user, date, _id }) => (
             <Row key={_id}>
               <Col xs={12} lg={12}>
-                <Comments commentId={_id} commentDate={date} commentUsername={username} commentBody={body} />
+                <Comments commentId={_id} commentDate={date} commentUsername={user} commentBody={body} />
               </Col>
             </Row>))}
             </Container>

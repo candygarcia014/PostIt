@@ -1,6 +1,7 @@
+import React, {useState} from 'react';
+
 // Trunkcated/Extended Post on a new page
 
-import React from 'react';
 import './PostCardFull.css';
 import Button from 'react-bootstrap/Button';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
@@ -9,6 +10,8 @@ import Card from 'react-bootstrap/Card';
 
 
 const PostCardFull = (props) => {
+    
+    const [user, setUser] = useState(props.user.username)
 
     const handleShare = () => {
         const getUrl = window.location.href
@@ -23,7 +26,7 @@ const PostCardFull = (props) => {
             <Card.Title>{props.title}</Card.Title>
             <Card.Subtitle 
                 className="mb-2 text-muted meta-data-date-time meta-data">
-                <span className="meta-data-username">{props.username}</span> | {props.date} 
+                <span className="meta-data-username">{user}</span> | {props.date} 
             </Card.Subtitle>
             <Card.Text>
                 {props.body}
