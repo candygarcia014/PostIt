@@ -9,7 +9,7 @@ import './MakePost.css';
 import Api from "../../utils/Api";
 
 
-const MakePost = ({ user }) => {
+const MakePost = ({ user, getAllPost }) => {
     const [title, setTitle] = useState("")
     const [text, setText] = useState("")
 
@@ -27,13 +27,15 @@ const MakePost = ({ user }) => {
     const submit = e =>{
         e.preventDefault();
         const data = {
-            body:text, title, user, 
+            body:text, title, user,
         }
+        console.log(data);
         const { id } = decode(localStorage.getItem("token"));
         console.log(data, id)
          Api.createPosts(data, id);
          setTitle("");
          setText("");
+         getAllPost();
     }
 
     return (

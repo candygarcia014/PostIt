@@ -11,6 +11,7 @@ const PostCard = (props) => {
     const history = useHistory();            
     const [postid, setPostid] = useState(0);    
     const [show, setShow] = useState(false);
+    const [user, setUser] = useState(props.user)
     const truncatedPost = props.body?.substring(0, 200) + "...";
 
     const handleShare = (id) => {
@@ -46,7 +47,7 @@ const PostCard = (props) => {
             <Card.Title>{props.title}</Card.Title>
             <Card.Subtitle 
                 className="mb-2 text-muted meta-data-date-time meta-data">
-                <span className="meta-data-username">{props.username}</span> | {props.date} 
+                <span className="meta-data-username">{user.username}</span> | {props.date} 
             </Card.Subtitle>
             <Card.Text>
                 {truncatedPost}
