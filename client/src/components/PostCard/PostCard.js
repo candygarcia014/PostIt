@@ -1,3 +1,5 @@
+// Post component on the Forum page!!
+
 import React, {useState} from 'react';
 import './PostCard.css';
 import { useHistory, Link } from 'react-router-dom';
@@ -42,9 +44,10 @@ const PostCard = (props) => {
     const handleShow = () => setShow(true);
     return (
         <>
-        <Card className="p-0 my-2">
+        <Card className="p-0 my-2" id="PostBody">
         <Card.Body>
             <Link to={`/post/${props.id}`}><Card.Title>{props.title}</Card.Title></Link>
+
             <Card.Subtitle 
                 className="mb-2 text-muted meta-data-date-time meta-data">
                 <span className="meta-data-username">{user.username}</span> | {props.date} 
@@ -54,7 +57,7 @@ const PostCard = (props) => {
             </Card.Text>
             <ButtonGroup className="comment-share-button">
             <Button variant="primary" as="input" type="button" value="Comments" data-id={props.id} onClick={handleComment}/>{' '}
-            <Button variant="primary" onClick={() => handleShare(props.id) } as="input" type="submit" value="Share" />{' '}
+
             </ButtonGroup>           
         </Card.Body>
         </Card>
