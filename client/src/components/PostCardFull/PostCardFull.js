@@ -18,7 +18,7 @@ const PostCardFull = (props) => {
 
     return (
     
-        <Card className="p-0 my-2">
+        <Card className="p-0 my-2" id="PostBody">
         <Card.Body>
             <Card.Title>{props.title}</Card.Title>
             <Card.Subtitle 
