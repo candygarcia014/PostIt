@@ -21,7 +21,15 @@
         "github": "https://github.com/cgconverse",
         "image": "https://github.com/ShanniSnax/self-care-pirates/blob/main/client/src/components/images/Cathlene.jpg?raw=true",
         "linkedin": "https://www.linkedin.com/in/cathlene-c-5b477357/"
-    }
+    },
+
+    {
+      "id": 4,
+      "name": "John Westermeyer",
+      "github": "https://github.com/johnwestermeyer",
+      "image": "https://github.com/ShanniSnax/self-care-pirates/blob/main/client/src/components/images/john.jpg?raw=true",
+      "linkedin": "https://www.linkedin.com/in/cathlene-c-5b477357/"
+  }
    
   ]
   

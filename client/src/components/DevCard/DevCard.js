@@ -12,18 +12,16 @@ const DevCard = (props) => {
         
             <Card.Body>
                 <Card.Title>{props.name}</Card.Title>
-            
-                <a href={props.github}>
+
                     <Card.Text>
                        <a href={props.github}><img className="github" src="https://github.com/ShanniSnax/self-care-pirates/blob/main/client/src/components/images/github-icon.png?raw=true"/></a> 
                     </Card.Text>
-                </a>
-                <a href={props.linkedin}>
+                
+                
                     <Card.Text>
                        <a href={props.linkedin}><img src="https://github.com/ShanniSnax/self-care-pirates/blob/main/client/src/components/images/linkedin-icon.png?raw=true"/></a> 
                     </Card.Text>
-                </a>
-            
+
             </Card.Body>
         </Card>
     )
