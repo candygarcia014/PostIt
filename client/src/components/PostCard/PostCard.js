@@ -46,7 +46,7 @@ const PostCard = (props) => {
         <>
         <Card className="p-0 my-2" id="PostBody">
         <Card.Body>
-            <Link to={`/post/${props.id}`}><Card.Title>{props.title}</Card.Title></Link>
+            <Link to={`/post/${props.id}`} className="LinkToPost"><Card.Title>{props.title}</Card.Title></Link>
 
             <Card.Subtitle 
                 className="mb-2 text-muted meta-data-date-time meta-data">
@@ -56,7 +56,7 @@ const PostCard = (props) => {
                 {truncatedPost}
             </Card.Text>
             <ButtonGroup className="comment-share-button">
-            <Button variant="primary" as="input" type="button" value="Comments" data-id={props.id} onClick={handleComment}/>{' '}
+            <Button variant="outline-dark" as="input" type="button" value="Comments" data-id={props.id} onClick={handleComment}/>{' '}
 
             </ButtonGroup>           
         </Card.Body>

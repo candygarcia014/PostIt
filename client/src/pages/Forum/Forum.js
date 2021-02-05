@@ -7,6 +7,7 @@ import BackToTop from '../../components/BackToTop/BackToTop';
 import './Forum.css';
 import MakePost from '../../components/MakePost/MakePost';
 import Api from "../../utils/Api"
+import Tags from '../../components/Tags/Tags';
 
 
 
@@ -93,11 +94,12 @@ const Forum = () => {
         <Col xs={12} sm={12} lg={2}>
           <Row>
             <Col xs={12} className="category-desktop">
-              <CategoryWidget />
+              {/* <CategoryWidget /> */}
+              <Tags/>
             </Col>
-            <Col xs={12} className="category-mobile">
+            {/* <Col xs={12} className="category-mobile">
               <CategoryMobile />
-            </Col>
+            </Col> */}
           </Row>
           <Row>
             <Col xs={12}>
