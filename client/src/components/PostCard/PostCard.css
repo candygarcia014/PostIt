@@ -1,11 +1,13 @@
 .meta-data-date-time {
     font-style: italic;
+    color: #343a40;
 }
 
 .meta-data-username {
     text-transform: uppercase;
     font-style: normal;
     text-decoration: underline;
+    color: #343a40;
 }
 
 .meta-data {
@@ -41,4 +43,14 @@
     box-shadow: -7px 10px 10px 5px rgba(0, 0, 0, 0.5);
     border-radius: 15px;
 
+}
+
+.LinkToPost {
+    color: #343a40;
+}
+.LinkToPost:hover {
+    color: #343a40;
+}
+.LinkToPost:visited {
+    color: #cecece;
 }
