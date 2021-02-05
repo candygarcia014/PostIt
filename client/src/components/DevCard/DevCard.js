@@ -1,4 +1,5 @@
 import React from 'react';
+import { BsFillPlusSquareFill } from 'react-icons/fa';
 import Card from 'react-bootstrap/Card';
 import "./DevCard.css"
 import '../../developers.json'
@@ -12,7 +13,7 @@ const DevCard = (props) => {
         
             <Card.Body>
                 <Card.Title>{props.name}</Card.Title>
-
+                {/* <BsFillPlusSquareFill /> */}
                     <Card.Text>
                        <a href={props.github}><img className="github" src="https://github.com/ShanniSnax/self-care-pirates/blob/main/client/src/components/images/github-icon.png?raw=true"/></a> 
                     </Card.Text>
