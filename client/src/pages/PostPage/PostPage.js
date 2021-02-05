@@ -37,8 +37,6 @@ const PostPage = () => {
 
   return (
     <Container fluid className="forum-container">
-      <Row>
-        <Col xs={12} >
           {/* // Container below holds the post on the PostPage above the comments */}
 
           <Container>
@@ -54,10 +52,11 @@ const PostPage = () => {
             </Row>
           </Container>
           {/* closing the container */}
-        </Col>
+
 
         {/* truncated posts */}
-        <Col xs={12}>
+        {/* <Col xs={9}> */}
+        <Container>
           {commentData.map(({ body, user, date, _id }) => (
             <Row key={_id}>
               <Col xs={12}>
@@ -76,9 +75,10 @@ const PostPage = () => {
               <MakeComment postId={postId} setCommentData={setCommentData} />
             </Col>
           </Row>
-        </Col>
+        </Container>
+          
+        {/* </Col> */}
 
-      </Row>
 
       <BackToTop />
     </Container>

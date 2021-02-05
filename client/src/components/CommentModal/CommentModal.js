@@ -26,6 +26,7 @@ const CommentModal = (props) => {
     >
       <Modal.Header>
         <MakeComment postId={props.postid} setCommentData={setCommentData} />
+        
       </Modal.Header>
 
       <Modal.Footer>
