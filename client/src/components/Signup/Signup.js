@@ -26,9 +26,10 @@ const Signup = (props) => {
       password,
     };
     Api.login(userLoginInfo).then(res => {
+      console.log("test")
       if(res.data.token) {
-        localStorage.setItem("token", res.data.token);
-        localStorage.setItem("username", JSON.stringify(userLoginInfo));
+        localStorage.setItem("token", res.data.token);        
+        localStorage.setItem("username", (JSON.stringify({username: JSON.parse(res.config.data).username, id: res.data.id})));
         history.push("/forum")
       }
     })

@@ -70,6 +70,7 @@ const Forum = () => {
   const getAllPost = async () => {
     try {
       const { data } = await Api.getPosts();
+      console.log(data);
       setData(data);
     } catch(err) {
       console.log(err)
@@ -108,11 +109,11 @@ const Forum = () => {
         <Col xs={12} sm={12} lg={8}>
             <Row>
               <Col xs={12}>
-                <MakePost user={username.id}/>
+                <MakePost user={username.id} getAllPost={getAllPost}/>
               </Col>
             </Row>
             {/* //these are the requirements for the posts */}
-            {data.map(({title, body, username, date, _id}) => (           
+            {data.map(({title, body, user, date, _id}) => (           
             <Row>
               <Col xs={12}>
                 <PostCard
@@ -120,7 +121,7 @@ const Forum = () => {
                   id={_id}
                   title={title} 
                   date={date} 
-                  username={username} 
+                  user={user} 
                   body={body}
                 />
               </Col>
