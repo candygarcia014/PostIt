@@ -55,7 +55,6 @@ const PostPage = () => {
 
 
         {/* truncated posts */}
-        {/* <Col xs={9}> */}
         <Container>
           {commentData.map(({ body, user, date, _id }) => (
             <Row key={_id}>
@@ -77,9 +76,6 @@ const PostPage = () => {
           </Row>
         </Container>
           
-        {/* </Col> */}
-
-
       <BackToTop />
     </Container>
   );
