@@ -77,6 +77,7 @@ router.post("/posts/:id", (req, res) => {
 //route to find all posts and sends back to user/frontend
 router.get("/posts", (req, res) => {
   Posts.find()
+    .populate('user')
     .sort({ date: -1 })
     .then((data) => res.json(data));
 });
@@ -115,7 +116,12 @@ router.post("/upload/:userId", async (req, res) => {
 //route to get individual post and returns data for that post
 router.get("/posts/:id", (req, res) => {
   Posts.findById(req.params.id)
-    .populate("comments")
+    .populate({ 
+      path: 'comments',
+      populate: {
+        path: 'user',
+        model: 'User'
+      }}) 
     .populate("user")
     .then((data) => {
         console.log(data)
@@ -166,6 +172,7 @@ router.get("/posts/:postId", (req, res) => {
   const { postId } = req.params;
   User.findById(postId)
     .populate(["post"])
+    .populate('user')
     .then((post) => res.json(post));
 });
 

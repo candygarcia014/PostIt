@@ -11,10 +11,10 @@ const postsSchema = new Schema({
         type: String,
         required: "post need a text",
     },
-    user: [{
+    user: {
         type: Schema.Types.ObjectId,
         ref: "User"
-    }],
+    },
     totalBolts: {
         type: Number,
         required: false,

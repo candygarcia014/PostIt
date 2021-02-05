@@ -5,7 +5,8 @@
 } 
 
 .navbar {
-    background: #4d4d4d;
+    /* background: #343434; */
+    background: transparent;
     color: white;
     /* opacity: 70; */
 }

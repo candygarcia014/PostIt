@@ -6,7 +6,7 @@ import Tags from '../Tags/Tags';
 
 const CategoryWidget = () => {
     return (
-        <Card className="p-0 my-2">
+        <Card className="p-0 my-2" id="CategoryWidget">
         <Card.Body>
             <Card.Title className="widget-title">CATEGORIES</Card.Title>
             <Tags />

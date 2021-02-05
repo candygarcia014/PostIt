@@ -7,6 +7,7 @@ import BackToTop from '../../components/BackToTop/BackToTop';
 import './Forum.css';
 import MakePost from '../../components/MakePost/MakePost';
 import Api from "../../utils/Api"
+import Tags from '../../components/Tags/Tags';
 
 
 
@@ -70,6 +71,7 @@ const Forum = () => {
   const getAllPost = async () => {
     try {
       const { data } = await Api.getPosts();
+      console.log(data);
       setData(data);
     } catch(err) {
       console.log(err)
@@ -92,11 +94,12 @@ const Forum = () => {
         <Col xs={12} sm={12} lg={2}>
           <Row>
             <Col xs={12} className="category-desktop">
-              <CategoryWidget />
+              {/* <CategoryWidget /> */}
+              <Tags/>
             </Col>
-            <Col xs={12} className="category-mobile">
+            {/* <Col xs={12} className="category-mobile">
               <CategoryMobile />
-            </Col>
+            </Col> */}
           </Row>
           <Row>
             <Col xs={12}>
@@ -108,11 +111,11 @@ const Forum = () => {
         <Col xs={12} sm={12} lg={8}>
             <Row>
               <Col xs={12}>
-                <MakePost user={username.id}/>
+                <MakePost user={username.id} getAllPost={getAllPost}/>
               </Col>
             </Row>
             {/* //these are the requirements for the posts */}
-            {data.map(({title, body, username, date, _id}) => (           
+            {data.map(({title, body, user, date, _id}) => (           
             <Row>
               <Col xs={12}>
                 <PostCard
@@ -120,7 +123,7 @@ const Forum = () => {
                   id={_id}
                   title={title} 
                   date={date} 
-                  username={username} 
+                  user={user} 
                   body={body}
                 />
               </Col>

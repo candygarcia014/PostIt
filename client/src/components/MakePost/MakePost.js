@@ -1,3 +1,5 @@
+// Create Post on Forum Page
+
 import React, {useState} from 'react';
 import Card from 'react-bootstrap/Card';
 import Form from 'react-bootstrap/Form';
@@ -9,7 +11,7 @@ import './MakePost.css';
 import Api from "../../utils/Api";
 
 
-const MakePost = ({ user }) => {
+const MakePost = ({ user, getAllPost }) => {
     const [title, setTitle] = useState("")
     const [text, setText] = useState("")
 
@@ -27,17 +29,19 @@ const MakePost = ({ user }) => {
     const submit = e =>{
         e.preventDefault();
         const data = {
-            body:text, title, user, 
+            body:text, title, user,
         }
+        console.log(data);
         const { id } = decode(localStorage.getItem("token"));
         console.log(data, id)
          Api.createPosts(data, id);
          setTitle("");
          setText("");
+         getAllPost();
     }
 
     return (
-    <Card className="p-0 my-2">
+    <Card className="p-0 my-2" id="CreatePostBody">
     <Card.Body>
 
     <Form>        
@@ -69,7 +73,7 @@ const MakePost = ({ user }) => {
 {/* submit button to create a new post */}
             <Col xs={4}>
                 <Button 
-                    variant="primary" 
+                    variant="outline-dark" 
                     type="submit"
                     className="post-button"
                     onClick={submit}
