@@ -64,7 +64,7 @@ const PostPage = () => {
     <Col>
       <PostCardFull 
         title={postData.title}
-        username={postData.username}
+        user={postData.user}
         date={postData.date}
         body={postData.body}
       />
@@ -76,10 +76,10 @@ const PostPage = () => {
 
         {/* truncated posts */}
         <Col xs={8} sm={12} lg={8}>
-          {commentData.map(({ body, username, date, _id }) => (
+          {commentData.map(({ body, user, date, _id }) => (
             <Row key={_id}>
               <Col xs={12}>
-                <Comments commentId={_id} commentDate={date} commentUsername={username} commentBody={body} />
+                <Comments commentId={_id} commentDate={date} commentUsername={user} commentBody={body} />
               </Col>
             </Row>
           ))}
