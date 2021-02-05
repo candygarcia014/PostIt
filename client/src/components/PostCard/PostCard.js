@@ -2,7 +2,7 @@
 
 import React, {useState} from 'react';
 import './PostCard.css';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import Card from 'react-bootstrap/Card';
@@ -45,8 +45,9 @@ const PostCard = (props) => {
     return (
         <>
         <Card className="p-0 my-2" id="PostBody">
-        <Card.Body >
-            <Card.Title>{props.title}</Card.Title>
+        <Card.Body>
+            <Link to={`/post/${props.id}`}><Card.Title>{props.title}</Card.Title></Link>
+
             <Card.Subtitle 
                 className="mb-2 text-muted meta-data-date-time meta-data">
                 <span className="meta-data-username">{user.username}</span> | {props.date} 

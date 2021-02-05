@@ -3,8 +3,7 @@ import Card from 'react-bootstrap/Card';
 import './Comments.css';
 
 
-const Comments = (props) => {    
-    console.log(props)
+const Comments = (props) => {
     const [user, setUser] = useState(props.commentUsername.username)
 
     return (
