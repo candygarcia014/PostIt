@@ -30,7 +30,7 @@ const MakeComment = ({ postId, setCommentData}) => {
   };
 
   return (
-    <Card className="p-0 my-2">
+    <Card className="p-0 my-2" id="MakeComment">
       <Card.Body>
         <Form>
           <Form.Group controlId="exampleForm.ControlInput1">
