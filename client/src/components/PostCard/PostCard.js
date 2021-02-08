@@ -2,15 +2,15 @@
 
 import React, {useState} from 'react';
 import './PostCard.css';
-import { useHistory, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import Card from 'react-bootstrap/Card';
 import CommentModal from '../CommentModal/CommentModal.js';
+import LikeButton from '../LikeButton/LikeButton'
 
 
-const PostCard = (props) => {
-    const history = useHistory();            
+const PostCard = (props) => {    
     const [postid, setPostid] = useState(0);    
     const [show, setShow] = useState(false);
     const [user, setUser] = useState(props.user)
@@ -25,12 +25,6 @@ const PostCard = (props) => {
     alert('share this link    ' + baseUrl) 
 
     }
-
-    const handleredirct = e => {
-        
-        const id  = e.target.getAttribute("data-id")
-        history.push("/post/" + id);
-    };
 
     const handleComment = e =>{
         const id  = e.target.getAttribute("data-id");
@@ -57,6 +51,18 @@ const PostCard = (props) => {
             </Card.Text>
             <ButtonGroup className="comment-share-button">
             <Button variant="outline-dark" as="input" type="button" value="Comments" data-id={props.id} onClick={handleComment}/>{' '}
+            {
+            props.liked ?
+            <LikeButton
+            key={props.id}
+            id={props.id}
+            liked={props.liked}
+            curruser={props.curruser}
+            setLiked={props.setLiked}
+            getUserLikes={props.getUserLikes}
+            />
+            :null
+            }
 
             </ButtonGroup>           
         </Card.Body>

@@ -35,7 +35,7 @@ export default {
         return axios.post("/api/bio/" + id, data);
     },
     // Bio Update
-    bioGet: function(data, id) {
+    bioGet: async function(data, id) {
         return axios.get("/api/bio/" + id);
     },
     //creates comment
@@ -46,5 +46,14 @@ export default {
     postPull: function(data, id) {
         return axios.post("/api/postId/" + id);
     },
+    getUser: async function(id){
+        return await axios.get("/api/user/" + id);
+    },
+    updateLikes: async function(userId, postId){
+        return await axios.post("/api/user/" + userId + "/like/" + postId)
+    },
+    removeLike: async function(userId, postId){
+        return await axios.post("/api/user/" + userId + "/unlike/" + postId)
+    }
 }
 
