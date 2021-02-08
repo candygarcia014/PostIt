@@ -7,7 +7,6 @@ import Button from "react-bootstrap/Button";
 import { Row, Col, Container, ButtonGroup } from "react-bootstrap";
 import "./MakeComment.css";
 import Api from "../../utils/Api";
-import LikeBtn from "../LikeBtn/LikeBtn";
 
 const MakeComment = ({ postId, setCommentData }) => {
   const [text, setText] = useState("");
@@ -52,7 +51,6 @@ const MakeComment = ({ postId, setCommentData }) => {
               </Col>
               <Col xs={6}>
                 <ButtonGroup className="comment-share-button">
-                  <LikeBtn />
 
                   <Button
                     variant="outline-dark"

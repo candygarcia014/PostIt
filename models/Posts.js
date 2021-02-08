@@ -15,11 +15,6 @@ const postsSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: "User"
     },
-    totalBolts: {
-        type: Number,
-        required: false,
-        default: 0
-    },
     date: {
         type: Date,
         default: Date.now,
