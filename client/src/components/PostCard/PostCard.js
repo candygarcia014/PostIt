@@ -62,7 +62,7 @@ const PostCard = (props) => {
             />
             :null
             }
-            <Button variant="outline-dark" as="input" type="button" value="Comments" data-id={props.id} onClick={handleComment}/>{' '}
+            <Button variant="outline-dark" as="input" type="button" value="Comments" data-id={props.id} onClick={handleComment} className='CommentBtn'/>{' '}
 
             </ButtonGroup>           
         </Card.Body>
