@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { Container } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
+import CommentImage from "../CommentImage/CommentImage";
 import "./Comments.css";
 
 const Comments = (props) => {
@@ -15,7 +16,12 @@ const Comments = (props) => {
             <span className="meta-data-username">{user}</span> |{" "}
             {props.commentDate}
           </Card.Subtitle>
-          <Card.Text>{props.commentBody}</Card.Text>
+          
+          <Card.Text>
+            {/* Image Component, but does not currently work properly */}
+            {/* <CommentImage /> */}
+            {props.commentBody}
+          </Card.Text>
         </Card.Body>
       </Card>
     </Container>
