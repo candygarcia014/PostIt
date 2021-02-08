@@ -7,6 +7,7 @@ import Button from 'react-bootstrap/Button';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import Card from 'react-bootstrap/Card';
 import CommentModal from '../CommentModal/CommentModal.js';
+import LikeBtn from '../LikeBtn/LikeBtn';
 
 
 const PostCard = (props) => {
@@ -56,8 +57,9 @@ const PostCard = (props) => {
                 {truncatedPost}
             </Card.Text>
             <ButtonGroup className="comment-share-button">
-            <Button variant="outline-dark" as="input" type="button" value="Comments" data-id={props.id} onClick={handleComment}/>{' '}
-
+            <LikeBtn/>
+           
+            <Button className='CommentBtn' variant="outline-dark" as="input" type="button" value="Comments" data-id={props.id} onClick={handleComment}/>{' '}
             </ButtonGroup>           
         </Card.Body>
         </Card>
