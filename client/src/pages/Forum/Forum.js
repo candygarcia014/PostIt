@@ -102,8 +102,8 @@ const Forum = () => {
           <Row>
             <Col xs={12} className="category-desktop">
               {/* <CategoryWidget /> */}
-              <Tags />
               <CreatePostModal user={username.id} getAllPost={getAllPost}/>
+              <Tags />
             </Col>
             {/* <Col xs={12} className="category-mobile">
               <CategoryMobile />
