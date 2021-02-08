@@ -14,6 +14,7 @@ import Api from "../../utils/Api";
 const MakePost = ({ user, getAllPost }) => {
     const [title, setTitle] = useState("")
     const [text, setText] = useState("")
+    const [tags, setTags] = useState ([])
 
     //update tittle in posts 
     const updateTitle = e =>{
@@ -25,12 +26,32 @@ const MakePost = ({ user, getAllPost }) => {
         e.preventDefault()
         setText(e.target.value) 
     }
+    //Adding tags to the post - checking if the box has been checked in the array 
+    const updateTags = e =>{
+    //     let temp = tags
+    //     console.log(e)
+    //     let existing = false  
+    //     temp.forEach(i =>{
+    //         if (i === e){
+    //             temp.splice(i,1)
+    //             existing = true
+    //         }
+    //     })
+    //  if (!existing){ 
+    //      temp.push(e)
+    //      console.log(temp)
+    //  }
+    //  setTags(temp)
+    setTags(e)
+    }
     //submit onclick function on "submmit buotton on post card"
     const submit = e =>{
         e.preventDefault();
+        let dataTags = tags.join(",")
         const data = {
-            body:text, title, user,
+            body:text, title, user, dataTags
         }
+        console.log(dataTags)
         console.log(data);
         const { id } = decode(localStorage.getItem("token"));
         console.log(data, id)
@@ -41,7 +62,7 @@ const MakePost = ({ user, getAllPost }) => {
     }
 
     return (
-    <Card className="p-0 my-2" id="CreatePostBody">
+    <Card className="p-0 my-2" id="CreatePostBody" style={{zIndex:"10"}}>
     <Card.Body>
 
     <Form>        
@@ -61,6 +82,7 @@ const MakePost = ({ user, getAllPost }) => {
                     options={["Skin", "Hair", "Body", "Mind", "Style", "Nails"]}
                     name="tags"
                     placeholder="Tags (select up to 3)"
+                    handleOnChange={updateTags}
                 />
             </Col>
             <Col xs={4}>
