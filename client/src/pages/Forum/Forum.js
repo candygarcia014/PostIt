@@ -103,7 +103,7 @@ const Forum = () => {
             <Col xs={12} className="category-desktop">
               {/* <CategoryWidget /> */}
               <Tags />
-              <CreatePostModal />
+              <CreatePostModal user={username.id} getAllPost={getAllPost}/>
             </Col>
             {/* <Col xs={12} className="category-mobile">
               <CategoryMobile />
@@ -118,7 +118,7 @@ const Forum = () => {
         <Col xs={12} sm={12} lg={8}>
           <Row>
             <Col xs={12}>
-              <MakePost user={username.id} getAllPost={getAllPost} />
+              {/* <MakePost user={username.id} getAllPost={getAllPost} /> */}
             </Col>
           </Row>
           {/* //these are the requirements for the posts */}

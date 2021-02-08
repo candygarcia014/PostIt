@@ -45,7 +45,7 @@ const CreatePostModal = ({ user, getAllPost }) => {
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
+      <Button variant="primary" id="CreatePostBtn" onClick={handleShow}>
         Create a Post!
       </Button>
 
