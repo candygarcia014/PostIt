@@ -17,10 +17,14 @@ const PostPage = () => {
   //need container to display postdata on the postpage
   const [postData, setPostData] = useState();
   const [commentData, setCommentData] = useState([]);
+  const [liked, setLiked] = useState([]);
+  const [username, setUsername] = useState(JSON.parse(localStorage.getItem('username')));
+
 
   useEffect(() => {
     console.log(postId);
     getPost(postId);
+    getUserLikes();
   }, []);
 
   const getPost = async (id) => {
@@ -30,6 +34,18 @@ const PostPage = () => {
     setCommentData(res.data.comments);
   };
 
+  const getUserLikes = async () => {
+    try {
+      const res = await API.getUser(username.id);
+      setLiked(res.data.likes);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  useEffect(()=>{},[liked])
+
+
   if (!postData) return <h1>Loading...</h1>;
 
   console.log(postData);
@@ -37,45 +53,49 @@ const PostPage = () => {
 
   return (
     <Container fluid className="forum-container">
-          {/* // Container below holds the post on the PostPage above the comments */}
+      {/* // Container below holds the post on the PostPage above the comments */}
 
-          <Container>
-            <Row>
-              <Col xs={12}>
-                <PostCardFull
-                  title={postData.title}
-                  user={postData.user}
-                  date={postData.date}
-                  body={postData.body}
-                />
-              </Col>
-            </Row>
-          </Container>
-          {/* closing the container */}
+      <Container>
+        <Row>
+          <Col xs={12}>
+            <PostCardFull
+              title={postData.title}
+              user={postData.user}
+              date={postData.date}
+              body={postData.body}
+              liked={liked}
+              curruser={username.id}
+              setLiked={setLiked}
+              getUserLikes={getUserLikes}
 
+            />
+          </Col>
+        </Row>
+      </Container>
+      {/* closing the container */}
 
-        {/* truncated posts */}
-        <Container>
-          {commentData.map(({ body, user, date, _id }) => (
-            <Row key={_id}>
-              <Col xs={12}>
-                <Comments
-                  commentId={_id}
-                  commentDate={date}
-                  commentUsername={user}
-                  commentBody={body}
-                />
-              </Col>
-            </Row>
-          ))}
-
-          <Row>
+      {/* truncated posts */}
+      <Container>
+        {commentData.map(({ body, user, date, _id }) => (
+          <Row key={_id}>
             <Col xs={12}>
-              <MakeComment postId={postId} setCommentData={setCommentData} />
+              <Comments
+                commentId={_id}
+                commentDate={date}
+                commentUsername={user}
+                commentBody={body}
+              />
             </Col>
           </Row>
-        </Container>
-          
+        ))}
+
+        <Row>
+          <Col xs={12}>
+            <MakeComment postId={postId} setCommentData={setCommentData} />
+          </Col>
+        </Row>
+      </Container>
+
       <BackToTop />
     </Container>
   );

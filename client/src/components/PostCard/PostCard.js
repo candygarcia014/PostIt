@@ -9,7 +9,6 @@ import Card from 'react-bootstrap/Card';
 import CommentModal from '../CommentModal/CommentModal.js';
 import LikeButton from '../LikeButton/LikeButton'
 
-
 const PostCard = (props) => {    
     const [postid, setPostid] = useState(0);    
     const [show, setShow] = useState(false);

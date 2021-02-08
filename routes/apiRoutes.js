@@ -190,7 +190,7 @@ router.post("/user/:userId/unlike/:postId", async (req, res) => {
   const user = await User.findOne({_id: req.params.userId});
   const post = await Posts.findOne({_id: req.params.postId});
   user.likes.pull(req.params.postId)
-  post.likes = post.likes + 1;
+  post.likes = post.likes - 1;
   await user.save();
   await post.save();
 });
