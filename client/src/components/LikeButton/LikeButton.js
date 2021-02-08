@@ -2,6 +2,7 @@ import React, {useState, useEffect, useLayoutEffect} from 'react'
 import {Button} from 'react-bootstrap'
 import API from '../../utils/Api'
 import decode from 'jwt-decode';
+import './LikeButton.css';
 
 
 const LikeButton = (props) => {
@@ -63,8 +64,8 @@ const LikeButton = (props) => {
     return(
         <>
         {!isLiked ? 
-        <Button variant="outline-dark" onClick={likePost}><i class="far fa-heart"></i></Button>:
-        <Button variant="outline-dark" onClick={unlikePost}><i class="fas fa-heart"></i></Button>}
+        <Button variant="outline-dark" onClick={likePost} id="Like"><i class="far fa-heart"></i></Button>:
+        <Button variant="outline-dark" onClick={unlikePost} id="Unlike"><i class="fas fa-heart"></i></Button>}
         </>
     )
 }

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Button } from 'react-bootstrap'
-import './LikeBtn.css'
+
 
 function LikeBtn() {
     return (

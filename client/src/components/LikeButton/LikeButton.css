@@ -1,9 +1,9 @@
-#LikeBtn {
+#Like {
     border: none;
     margin-right: 1rem;
 
 }
-#LikeBtn:hover {
+#Like:hover {
     background: none;
 }
 
@@ -11,3 +11,13 @@
     outline: none;
     box-shadow: none;
   }
+
+#Unlike {
+    border: none;
+    margin-right: 1rem;
+
+}
+#Unlike:hover {
+    background: none;
+}
+
