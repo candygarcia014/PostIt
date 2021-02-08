@@ -58,34 +58,38 @@ import CreatePostModal from "../../components/CreatePostModal/CreatePostModal.js
 
 const Forum = () => {
   const [data, setData] = useState();
-  const [username, setUsername] = useState();
-  const [postid, setPostid] = useState(0);    
-  const [show, setShow] = useState(false);
+  const [username, setUsername] = useState(JSON.parse(localStorage.getItem('username')));
+  const [liked,setLiked] = useState([]);
 
-  const handleClose = () => {
-    setShow(false);
-  };
-  const handleShow = () => setShow(true);
-
-  //useEffect prevents it from running more than once
+   
+//useEffect prevents it from running more than once 
   useEffect(() => {
     getAllPost();
-    setUsername(JSON.parse(localStorage.getItem("username")));
-    //run what is in useEffect again / refresh the data and poppulate new posts at the top.
+    getUserLikes();
+    //run what is in useEffect again / refresh the data and poppulate new posts at the top. 
   }, []);
 
-  useEffect(() => {}, [data]);
+  useEffect(()=>{},[data])
   //this is the API to get all posts on forum pg
   const getAllPost = async () => {
     try {
       const { data } = await Api.getPosts();
-      console.log(data);
       setData(data);
     } catch (err) {
       console.log(err);
     }
   };
-  //const data = Api.getPosts()
+
+  useEffect(()=>{},[liked])
+  
+  const getUserLikes = async () =>{
+    try{
+      const res = await Api.getUser(username.id);
+      setLiked(res.data.likes);
+    } catch(err) {
+      console.log(err)
+    }
+}
 
   //to check if data is poppulating, if not populating it will show the loading componenet
   if (!data) return <h1>Loading...</h1>;
@@ -132,6 +136,10 @@ const Forum = () => {
                   date={date}
                   user={user}
                   body={body}
+                  liked={liked}
+                  curruser={username.id}
+                  setLiked={setLiked}
+                  getUserLikes={getUserLikes}
                 />
               </Col>
             </Row>

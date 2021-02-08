@@ -7,6 +7,7 @@ const { User, Posts, Comments } = require("../models/index");
 const passport = require("../configs/passport");
 const isUserAuthenticated = require("../middlewear/isAuthenticated");
 const path = require ("path") 
+const mongoose = require("mongoose")
 // creating s3 instance (to allow uploads)
 const s3 = new AWS.S3({
   accessKeyId: keys.s3key,
@@ -175,6 +176,26 @@ router.get("/posts/:postId", (req, res) => {
     .populate('user')
     .then((post) => res.json(post));
 });
+
+router.post("/user/:userId/like/:postId", async (req, res) => {
+  const user = await User.findOne({_id: req.params.userId});
+  const post = await Posts.findOne({_id: req.params.postId});
+  user.likes.push(req.params.postId)
+  post.likes = post.likes + 1;
+  await user.save();
+  await post.save();
+});
+
+router.post("/user/:userId/unlike/:postId", async (req, res) => {  
+  const user = await User.findOne({_id: req.params.userId});
+  const post = await Posts.findOne({_id: req.params.postId});
+  user.likes.pull(req.params.postId)
+  post.likes = post.likes + 1;
+  await user.save();
+  await post.save();
+});
+
+
 
 router.use((req, res) => {
   res.sendFile(path.join(__dirname, "../client/build/index.html"));
