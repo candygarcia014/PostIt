@@ -47,7 +47,9 @@ const LikeButton = (props) => {
         setIsLoading(true);
         const postId = props.id;
         const userId = props.curruser;
-        let remove = props.liked.splice(props.liked.indexOf(postId),1);
+        let remove = [];
+        if(props.liked.length > 1){
+            let remove = props.liked.splice(props.liked.indexOf(postId),1);}
         console.log(postId, userId, remove)
         try{
             API.removeLike(userId, postId);
