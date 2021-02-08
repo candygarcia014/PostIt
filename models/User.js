@@ -49,7 +49,14 @@ const userSchema = new Schema({
     ],
     bio: {
         type: String
-    }
+    },
+    likes:[
+        {
+            type: Schema.Types.ObjectId,
+            ref: "Posts",
+            required: false
+        }
+    ]
     // posts: [posts collection]
     // Create a post collection schema
 });

@@ -51,8 +51,6 @@ const MakePost = ({ user, getAllPost }) => {
         const data = {
             body:text, title, user, dataTags
         }
-        console.log(dataTags)
-        console.log(data);
         const { id } = decode(localStorage.getItem("token"));
         console.log(data, id)
          Api.createPosts(data, id);
