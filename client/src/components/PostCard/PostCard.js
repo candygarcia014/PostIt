@@ -8,6 +8,7 @@ import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import Card from 'react-bootstrap/Card';
 import CommentModal from '../CommentModal/CommentModal.js';
 import LikeButton from '../LikeButton/LikeButton'
+import PostImage from '../PostImage/PostImage';
 
 const PostCard = (props) => {    
     const [postid, setPostid] = useState(0);    
@@ -46,6 +47,7 @@ const PostCard = (props) => {
                 <span className="meta-data-username">{user.username}</span> | {props.date} 
             </Card.Subtitle>
             <Card.Text>
+                <PostImage/>
                 {truncatedPost}
             </Card.Text>
             <ButtonGroup className="comment-share-button">

@@ -1,0 +1,8 @@
+.PostImage {
+    display: block;
+    margin: 0 auto;
+    box-sizing: border-box;
+    max-width: 100%;
+    border: solid 1px;
+    max-height: 185px;
+}
