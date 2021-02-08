@@ -57,6 +57,7 @@ const MakeComment = ({ postId, setCommentData }) => {
                   <Button
                     variant="outline-dark"
                     type="submit"
+                    // changed classname to comment button, did this ruin anything?
                     className="CommentBtn"
                     onClick={submit}
                   >
