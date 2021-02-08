@@ -54,12 +54,6 @@ export default {
     },
     removeLike: async function(userId, postId){
         return await axios.post("/api/user/" + userId + "/unlike/" + postId)
-    },
-    addLikePost: function(postId){
-        return axios.post("/api/post/" + postId + "/like");
-    },
-    removeLikePost: function(postId){
-        return axios.post("/api/post/" + postId + "/unlike")
     }
 }
 

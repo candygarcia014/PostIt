@@ -32,8 +32,7 @@ const LikeButton = (props) => {
         const userId = props.curruser;
         let add = props.liked.concat(props.postId)
         try{
-            API.updateLikes(userId, postId)
-            API.addLikePost(postId);
+            API.updateLikes(userId, postId);
             props.setLiked(add);
             setIsLiked(true);
             setIsLoading(false);
@@ -52,7 +51,6 @@ const LikeButton = (props) => {
         console.log(postId, userId, remove)
         try{
             API.removeLike(userId, postId);
-            API.removeLikePost(postId);
             props.setLiked(remove);
             setIsLiked(false);
             setIsLoading(false);
