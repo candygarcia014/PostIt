@@ -63,8 +63,8 @@ const LikeButton = (props) => {
     return(
         <>
         {!isLiked ? 
-        <Button variant="outline-dark" onClick={likePost}>Like</Button>:
-        <Button variant="outline-dark" onClick={unlikePost}>UnLike</Button>}
+        <Button variant="outline-dark" onClick={likePost}><i class="far fa-heart"></i></Button>:
+        <Button variant="outline-dark" onClick={unlikePost}><i class="fas fa-heart"></i></Button>}
         </>
     )
 }
