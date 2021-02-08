@@ -1,13 +1,15 @@
 #Like {
     border: none;
     margin-right: 1rem;
+    outline: none;
 
 }
 #Like:hover {
     background: none;
+    transform: none !important;
 }
 
-.btn:focus {
+.btn:focus, .btn:active {
     outline: none;
     box-shadow: none;
   }
@@ -15,9 +17,16 @@
 #Unlike {
     border: none;
     margin-right: 1rem;
+    outline: none;
+
 
 }
 #Unlike:hover {
     background: none;
+    transform: none !important;
+}
+
+.btn {
+    transform: none !important;
 }
 

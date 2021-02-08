@@ -61,6 +61,7 @@ const PostPage = () => {
             <PostCardFull
               title={postData.title}
               user={postData.user}
+              id={postData._id}
               date={postData.date}
               body={postData.body}
               liked={liked}
