@@ -1,4 +1,4 @@
-// Post component on the Forum page!!
+// Displayed Posts component on the Forum page!!
 
 import React, {useState} from 'react';
 import './PostCard.css';

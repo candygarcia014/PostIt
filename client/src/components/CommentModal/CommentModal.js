@@ -24,13 +24,9 @@ const CommentModal = (props) => {
       onHide={props.handleClose}
       className="CommentModal"
     >
-      <Modal.Header>
-        <MakeComment postId={props.postid} setCommentData={setCommentData} />
-        
-      </Modal.Header>
-
-      <Modal.Footer>
-        <Container>
+      <Modal.Body>
+      <MakeComment postId={props.postid} setCommentData={setCommentData} />
+      <Container>
             {/* Currently appends the last comment at the bottom. Do we want this at the top? */}
           {commentData?.map(({ body, user, date, _id }) => (
             <Row key={_id}>
@@ -45,7 +41,7 @@ const CommentModal = (props) => {
             </Row>
           ))}
         </Container>
-      </Modal.Footer>
+      </Modal.Body>
     </Modal>
   );
 };

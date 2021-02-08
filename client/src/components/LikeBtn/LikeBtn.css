@@ -1,0 +1,13 @@
+#LikeBtn {
+    border: none;
+    margin-right: 1rem;
+
+}
+#LikeBtn:hover {
+    background: none;
+}
+
+.btn:focus {
+    outline: none;
+    box-shadow: none;
+  }

@@ -18,7 +18,7 @@
     box-shadow: -7px 10px 10px 5px rgba(0, 0, 0, 0.5);
     backdrop-filter: blur( 14.5px );
     -webkit-backdrop-filter: blur( 14.5px );
-    border-radius: 15px;
+    border-radius: 5px !important;
     border: none;
     /* border: 1px solid rgba( 255, 255, 255, 0.18 ); */
 }
@@ -29,7 +29,7 @@
     box-shadow: -7px 10px 10px 5px rgba(0, 0, 0, 0.5);
     backdrop-filter: blur( 14.5px );
     -webkit-backdrop-filter: blur( 14.5px );
-    border-radius: 15px;
+    border-radius: 5px ;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 

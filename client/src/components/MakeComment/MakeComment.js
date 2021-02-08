@@ -4,9 +4,10 @@ import decode from "jwt-decode";
 import Card from "react-bootstrap/Card";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import { Row, Col, Container } from "react-bootstrap";
+import { Row, Col, Container, ButtonGroup } from "react-bootstrap";
 import "./MakeComment.css";
 import Api from "../../utils/Api";
+import LikeBtn from "../LikeBtn/LikeBtn";
 
 const MakeComment = ({ postId, setCommentData }) => {
   const [text, setText] = useState("");
@@ -50,14 +51,19 @@ const MakeComment = ({ postId, setCommentData }) => {
                 </Form.Group>
               </Col>
               <Col xs={6}>
-                <Button
-                  variant="outline-dark"
-                  type="submit"
-                  className="post-button"
-                  onClick={submit}
-                >
-                  Comment
-                </Button>
+                <ButtonGroup className="comment-share-button">
+                  <LikeBtn />
+
+                  <Button
+                    variant="outline-dark"
+                    type="submit"
+                    // changed classname to comment button, did this ruin anything?
+                    className="CommentBtn"
+                    onClick={submit}
+                  >
+                    Comment
+                  </Button>
+                </ButtonGroup>
               </Col>
             </Row>
           </Form>
