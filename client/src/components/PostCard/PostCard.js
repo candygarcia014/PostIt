@@ -50,7 +50,6 @@ const PostCard = (props) => {
                 {truncatedPost}
             </Card.Text>
             <ButtonGroup className="comment-share-button">
-            <Button variant="outline-dark" as="input" type="button" value="Comments" data-id={props.id} onClick={handleComment}/>{' '}
             {
             props.liked ?
             <LikeButton
@@ -63,6 +62,7 @@ const PostCard = (props) => {
             />
             :null
             }
+            <Button variant="outline-dark" as="input" type="button" value="Comments" data-id={props.id} onClick={handleComment}/>{' '}
 
             </ButtonGroup>           
         </Card.Body>
