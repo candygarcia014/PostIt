@@ -1,5 +1,5 @@
 button {
-    /* border-radius: 50%; */
+    border-radius: 20%;
     -webkit-transition: -webkit-transform .5s ease-in-out;
             transition:         transform .5s ease-in-out;
   }
