@@ -78,10 +78,10 @@ class PhotoModal extends Component {
             </Form>
           </Modal.Body>
           <Modal.Footer>
-            <Button variant="secondary" onClick={this.handleClose}>
+            <Button variant="outline-secondary" className="uploadphoto-btns" onClick={this.handleClose}>
               Close
             </Button>
-            <Button variant="secondary" onClick={this.fileUploadHandler}>
+            <Button variant="outline-secondary" className="uploadphoto-btns" onClick={this.fileUploadHandler}>
               Save Changes
             </Button>
           </Modal.Footer>
