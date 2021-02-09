@@ -3,6 +3,7 @@ import '../images/AvatarExample.jpg';
 import '../PostImage/PostImage.css'
 const Image = require('../images/AvatarExample.jpg')
 
+
 function PostImage(props) {
   return (
     <div>

@@ -1,12 +1,26 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Component } from "react";
 import { Modal, Col, Row, Container, Button, Form } from "react-bootstrap";
 import DropdownMultiselect from "react-multiselect-dropdown-bootstrap";
 import Api from "../../utils/Api";
 import decode from 'jwt-decode';
+// s3 Imports
+import ReactS3 from 'react-s3';
+import { uploadFile } from 'react-s3';
 
 import "./CreatePostModal.css";
 import MakePost from "../MakePost/MakePost.js";
 import API from "../../utils/Api";
+
+// Config for s3
+// Needs to be updated with secret keys
+const config = {
+  bucketName: 'scp-ucla-bc2021',
+  dirName: 'PostImage', /* optional */
+  region: 'us-west-2',
+  accessKeyId: 'AKIAV3L2IG2JAA4V4HPK',
+  secretAccessKey: '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',
+}
+
 
 const CreatePostModal = ({ user, getAllPost }) => {
   const [show, setShow] = useState(false);
@@ -41,7 +55,23 @@ const CreatePostModal = ({ user, getAllPost }) => {
      setTitle("");
      setText("");
      getAllPost();
+
+
+  const Upload = e => {
+    e.preventDefault();
+    console.log(e.target.file[0]);
+
+
+  }
 }
+// class CreatePostModal extends Component {
+//   constructor(){
+//     super ();
+//   }
+//   upload(e){
+//     console.log(e.target.files[0]);
+//   }
+// }
 
   return (
     <>
@@ -82,8 +112,11 @@ const CreatePostModal = ({ user, getAllPost }) => {
                 placeholder="Tags (select up to 3)"
               />
             </Col>
+
+            {/* S3 File Upload */}
             <Col xs={4}>
               <Form.Group>
+              <input type='file' onChange={this.upload} />
                 <Form.File id="exampleFormControlFile1" />
               </Form.Group>
             </Col>
