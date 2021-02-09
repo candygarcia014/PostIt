@@ -5,11 +5,12 @@ import CategoryMobile from "./../../components/CategoryMobile/CategoryMobile";
 import { Container, Row, Col } from "react-bootstrap";
 import BackToTop from "../../components/BackToTop/BackToTop";
 import "./Forum.css";
-import MakePost from "../../components/MakePost/MakePost";
+// import MakePost from "../../components/MakePost/MakePost";
 import Api from "../../utils/Api";
 import Tags from "../../components/Tags/Tags";
 // import CommentModal from '../CommentModal/CommentModal.js';
 import CreatePostModal from "../../components/CreatePostModal/CreatePostModal.js";
+import { CloudWatchEvents } from "aws-sdk";
 
 const Forum = () => {
   const [data, setData] = useState();
@@ -19,10 +20,14 @@ const Forum = () => {
    
 //useEffect prevents it from running more than once 
   useEffect(() => {
-    getAllPost();
-    getUserLikes();
+    try{
+      getAllPost();
+      getUserLikes();
+    } catch(err){
+      console.log(err);
+    }
     //run what is in useEffect again / refresh the data and poppulate new posts at the top. 
-  }, []);
+  }, [username]);
 
   useEffect(()=>{},[data])
   //this is the API to get all posts on forum pg
@@ -47,8 +52,8 @@ const Forum = () => {
 }
 
   //to check if data is poppulating, if not populating it will show the loading componenet
-  if (!data) return <h1>Loading...</h1>;
-  if (!username) return <h1>Loading...</h1>;
+  if (!data) return <h1 style = {{color:"whitesmoke"}}>Loading...</h1>;
+  if (!username) return <h1 style = {{color:"whitesmoke"}}>Loading...</h1>;
 
   //sorts tru the array of posts and puts them in chronological order from newest to oldest
   
@@ -62,7 +67,7 @@ const Forum = () => {
             <Col xs={12} className="category-desktop">
               {/* <CategoryWidget /> */}
               <CreatePostModal user={username.id} getAllPost={getAllPost}/>
-              <Tags />
+              <Tags setData={setData}/>
             </Col>
             {/* <Col xs={12} className="category-mobile">
               <CategoryMobile />

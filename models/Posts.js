@@ -33,6 +33,9 @@ const postsSchema = new Schema({
     image: {
         type: String
     },
+    dataTags: {
+        type: String
+    }
   
 });
 

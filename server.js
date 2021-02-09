@@ -14,6 +14,7 @@ app.use(express.json());
 app.use(session({ resave:true, saveUninitialized:true, secret: 'Pirate Pickles',}));
 app.use(passport.initialize());
 app.use(passport.session());
+mongoose.set('useCreateIndex', true);
 if(process.env.NODE_ENV === "production") {
     app.use(express.static("client/build"));
 };

@@ -70,7 +70,7 @@ router.post("/posts/:id", (req, res) => {
       { _id: id },
       { $push: { userPosts: data.id } },
       { new: true }
-    ).then((res) => {
+    ).then((data) => {
       return res.status(200).json("posted");
     });
   });
@@ -227,6 +227,11 @@ router.post("/user/:userId/unlike/:postId", async (req, res) => {
   await user.save();
   await post.save();
 });
+
+router.get("/post/tag/:query", (req,res)=>{
+  Posts.find({dataTags: {$regex: req.params.query}}).
+  then((data) => res.json(data));
+})
 
 
 

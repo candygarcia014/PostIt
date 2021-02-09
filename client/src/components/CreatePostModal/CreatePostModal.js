@@ -17,7 +17,8 @@ const CreatePostModal = ({ user, getAllPost }) => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const [title, setTitle] = useState("");
-  const [text, setText] = useState("");
+  const [text, setText] = useState("");  
+  const [tags, setTags] = useState ([])
 
   //update tittle in posts
   const updateTitle = (e) => {
@@ -31,11 +32,17 @@ const CreatePostModal = ({ user, getAllPost }) => {
     setText(e.target.value);
   };
 
+  const updateTags = e =>{
+    console.log(e);
+    setTags(e)
+    }
+
   //submit onclick function on "submmit buotton on post card"
   const submit = (e) =>{
-    e.preventDefault();
+    e.preventDefault();    
+    let dataTags = tags.join(",")
     const data = {
-        body:text, title, user,
+        body:text, title, user, dataTags
     }
     const { id } = decode(localStorage.getItem("token"));
      Api.createPosts(data, id).then(res=>{
@@ -45,16 +52,17 @@ const CreatePostModal = ({ user, getAllPost }) => {
      });
      setTitle("");
      setText("");
-     getAllPost();
   }
 
   const Upload = (postId) => {
     const data = new FormData();
     data.append("file", selectedFile);
-    Api.uploadPhotoPost(data, postId).then(x => {})
+    Api.uploadPhotoPost(data, postId).then(x => {
+      getAllPost();
+    setShow(false)})
           .catch((err) => {
         // then print response status
-        alert("upload fail");
+        // alert("upload fail");
         console.log(err);
       });
   }
@@ -73,7 +81,7 @@ const CreatePostModal = ({ user, getAllPost }) => {
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Create a Post</Modal.Title>
+          <Modal.Title style = {{color:"whitesmoke"}}>Create a Post</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           {/* Post Title Form */}
@@ -102,6 +110,7 @@ const CreatePostModal = ({ user, getAllPost }) => {
                 options={["Skin", "Hair", "Body", "Mind", "Style", "Nails"]}
                 name="tags"
                 placeholder="Tags (select up to 3)"
+                handleOnChange={updateTags}
               />
             </Col>
 
