@@ -57,6 +57,9 @@ export default {
     },
     removeLike: async function(userId, postId){
         return await axios.post("/api/user/" + userId + "/unlike/" + postId)
+    },
+    searchByTag: function(query){
+        return axios.get("/api/post/tag/" + query);
     }
 }
 
