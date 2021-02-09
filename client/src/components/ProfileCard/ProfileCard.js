@@ -79,7 +79,7 @@ function ProfileCard() {
             {/* Full Name*/}
             <Row>
                 <Col xs={12}>
-                    <div className="FullName">
+                    <div className="FullName" style = {{color:"whitesmoke", fontSize:25}}>
                         Hello, I'm {fullName(userInfo)}!
                     </div> 
                 </Col>
