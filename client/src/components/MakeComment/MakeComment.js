@@ -50,7 +50,7 @@ const MakeComment = ({ postId, setCommentData }) => {
 
 
                   <Button
-                    variant="outline-secondary"
+                    variant="outline-dark"
                     type="submit"
                     className="CommentBtn"
                     onClick={submit}
