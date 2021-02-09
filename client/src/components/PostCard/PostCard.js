@@ -24,15 +24,7 @@ const PostCard = (props) => {
     useEffect(() => {
     }, []);
 
-    // const handleShare = (id) => {
-    // const getUrl = window.location
-    // var baseUrl = getUrl.protocol + "//" + getUrl.host + '/post/' + id;
-    // console.log(baseUrl)
-
-    // document.querySelector("#baseUrl")
-    // alert('share this link    ' + baseUrl) 
-
-    // }
+   
 
     useEffect(()=>{},[props.image]);
 
@@ -52,16 +44,18 @@ const PostCard = (props) => {
         <Card className="p-0 m-2" id="PostBody">
         <Card.Body>
             <Link to={`/post/${props.id}`} className="LinkToPost"><Card.Title>{props.title}</Card.Title></Link>
+            
 
             <Card.Subtitle 
                 className="mb-2 text-muted meta-data-date-time meta-data">
-                <span className="meta-data-username">{user.username}</span> | {props.date} 
+                <Link to={`/user/${props.id}`} className="meta-data-username">{user.username}</Link>
+                | {props.date} 
             </Card.Subtitle>
-            <Card.Text>
+            <Card.Body style={{height:'15rem'}}>
                 <PostImage image={props.image}/>
                 {truncatedPost}
-            </Card.Text>
-            <ButtonGroup className="comment-share-button">
+            </Card.Body>
+            <ButtonGroup className="comment-share-button" >
             {
             props.liked ?
             <LikeButton

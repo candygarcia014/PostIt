@@ -1,10 +1,10 @@
 #MakeComment {
-    background: rgba( 221, 221, 221, 0.5 );
+    background: rgba(221, 221, 221, 0.5);
     box-shadow: -7px 10px 10px 5px rgba(0, 0, 0, 0.5);
     backdrop-filter: blur( 14.5px );
     -webkit-backdrop-filter: blur( 14.5px );
     border-radius: 15px;
-    
+
 }
 
 .post-button{
@@ -13,7 +13,12 @@
 }
 
 .CommentBtn {
-    float: right !important;
+    /* float: center !important; */
     border-radius: 5px !important;
     box-shadow: -1px 2px 2px 1px rgba(0, 0, 0, 0.5);
+
+    font-family: 'Proza Libre', sans-serif;
+    font-size: smaller;
+
+
 }

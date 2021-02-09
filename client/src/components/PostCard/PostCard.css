@@ -9,6 +9,11 @@
     text-decoration: underline;
     color: #343a40;
 }
+.meta-data-username:hover {
+    color: whitesmoke;
+}
+
+
 
 .meta-data {
     font-size: small;
@@ -34,9 +39,13 @@
 } */
 
 .CommentBtn {
+    position: absolute;
+    bottom: 0;
+    
     float: right !important;
     border-radius: 5px !important;
     box-shadow: -1px 2px 2px 1px rgba(0, 0, 0, 0.5);
+
 }
 
 .card:hover {
@@ -50,14 +59,18 @@
     border-radius: 15px;
     width: 30%;
 
+
+
 }
 
 .LinkToPost {
-    color: #343a40;
+    color: white;
 }
 .LinkToPost:hover {
     color: #343a40;
 }
 .LinkToPost:visited {
-    color: #cecece;
+    color: #343a40;
+
+  
 }

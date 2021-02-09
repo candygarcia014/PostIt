@@ -9,3 +9,16 @@
     color: white;
 }
 
+.modal-header{ 
+    color: white;
+}
+
+.userPhotoModal {
+    color: white;
+}
+
+.uploadphoto-btns{
+    color: white !important;
+    font-family: 'Proza Libre', sans-serif;
+    font-size: smaller;
+}

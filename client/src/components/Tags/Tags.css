@@ -21,6 +21,8 @@
     border-radius: 5px !important;
     border: none;
     /* border: 1px solid rgba( 255, 255, 255, 0.18 ); */
+    font-family: 'Proza Libre', sans-serif;
+    font-size: smaller;
 }
 
 #dropdown-basic-button:hover{
@@ -35,8 +37,11 @@
     -webkit-backdrop-filter: blur( 14.5px );
     border-radius: 5px ;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
+    font-family: 'Proza Libre', sans-serif;
+    font-size: smaller;
 }
 
 .dropdown-header {
     color: white;
+    
 }

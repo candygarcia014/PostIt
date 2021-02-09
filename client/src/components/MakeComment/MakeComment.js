@@ -44,18 +44,14 @@ const MakeComment = ({ postId, setCommentData }) => {
               />
             </Form.Group>
             <Row>
-              <Col xs={6}>
-                <Form.Group>
-                  <Form.File id="exampleFormControlFile1" />
-                </Form.Group>
-              </Col>
-              <Col xs={6}>
+
+              <Col xs={12}>
                 <ButtonGroup className="comment-share-button">
+
 
                   <Button
                     variant="outline-dark"
                     type="submit"
-                    // changed classname to comment button, did this ruin anything?
                     className="CommentBtn"
                     onClick={submit}
                   >

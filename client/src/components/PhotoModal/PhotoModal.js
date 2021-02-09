@@ -36,17 +36,7 @@ class PhotoModal extends Component {
         alert("upload fail");
         console.log(err);
       });
-    // axios
-    //   .post({
-    //     url: "/upload/" + userId.id.toString(),
-    //     data: data,
-    //   })
-    //   .then(console.log(data))
-    //   .catch((err) => {
-    //     // then print response status
-    //     alert("upload fail");
-    //     console.log(err);
-    //   });
+
   }
   onChangeHandler = (event) => {
     var file = event.target.files[0];
@@ -57,22 +47,9 @@ class PhotoModal extends Component {
     });
   };
   fileUploadHandler = () => {
-    // const data = new FormData();
-    // console.log(this.state.selectedFile);
-    // data.append("file", this.state.selectedFile);
-    // console.log(data);
+
     this.Upload()
-    // axios
-    //   .post("/api/upload", data)
-    //   .then((res) => {
-    //     // then print response status
-    //     alert("upload success");
-    //   })
-    //   .catch((err) => {
-    //     // then print response status
-    //     alert("upload fail");
-    //     console.log(err);
-    //   });
+
   };
   render() {
     return (
@@ -88,7 +65,7 @@ class PhotoModal extends Component {
           <Modal.Header closeButton>
             <Modal.Title>Upload a Photo</Modal.Title>
           </Modal.Header>
-          <Modal.Body>
+          <Modal.Body className='userPhotoModal'>
             <Form>
               <Form.Group>
                 <Form.File
@@ -101,10 +78,10 @@ class PhotoModal extends Component {
             </Form>
           </Modal.Body>
           <Modal.Footer>
-            <Button variant="secondary" onClick={this.handleClose}>
+            <Button variant="outline-secondary" className="uploadphoto-btns" onClick={this.handleClose}>
               Close
             </Button>
-            <Button variant="secondary" onClick={this.fileUploadHandler}>
+            <Button variant="outline-secondary" className="uploadphoto-btns" onClick={this.fileUploadHandler}>
               Save Changes
             </Button>
           </Modal.Footer>
