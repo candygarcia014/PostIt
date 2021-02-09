@@ -54,7 +54,7 @@ const CreatePostModal = ({ user, getAllPost }) => {
     Api.uploadPhotoPost(data, postId).then(x => {})
           .catch((err) => {
         // then print response status
-        alert("upload fail");
+        // alert("upload fail");
         console.log(err);
       });
   }
@@ -73,7 +73,7 @@ const CreatePostModal = ({ user, getAllPost }) => {
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Create a Post</Modal.Title>
+          <Modal.Title style = {{color:"whitesmoke"}}>Create a Post</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           {/* Post Title Form */}
