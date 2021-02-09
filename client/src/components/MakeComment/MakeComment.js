@@ -48,8 +48,9 @@ const MakeComment = ({ postId, setCommentData }) => {
               <Col xs={12}>
                 <ButtonGroup className="comment-share-button">
 
+
                   <Button
-                    variant="outline-dark"
+                    variant="outline-secondary"
                     type="submit"
                     className="CommentBtn"
                     onClick={submit}
