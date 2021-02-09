@@ -21,31 +21,7 @@ const PostCard = (props) => {
     const truncatedPost = props.body?.substring(0, 200) + "...";
     const[userInfo, setUserInfo]=useState();
 
-    useEffect(() => {
-        getUser();
-    }, [userInfo]);
-
-    const getUser = async () => {
-        const { id } = decode(localStorage.getItem("token"));
-        const { data } = await Api.name(id);
-        setUserInfo(data);
-    };
-    
-    // This should be postid not user info!!
-    if(!userInfo) return <h1>Loading...</h1>
-    const { image } = userInfo;
-
-
-
-    // const handleShare = (id) => {
-    // const getUrl = window.location
-    // var baseUrl = getUrl.protocol + "//" + getUrl.host + '/post/' + id;
-    // console.log(baseUrl)
-
-    // document.querySelector("#baseUrl")
-    // alert('share this link    ' + baseUrl) 
-
-    // }
+    useEffect(()=>{},[props.image]);
 
     const handleComment = e =>{
         const id  = e.target.getAttribute("data-id");

@@ -8,7 +8,7 @@ import './LikeButton.css';
 const LikeButton = (props) => {
     const [isLiked,setIsLiked] = useState(false);
     const [isLoading,setIsLoading] = useState(true);
-    const [likeCheck,setLikeCheck] = useState(...props.liked)
+    const [likeCheck,setLikeCheck] = useState(props.liked)
 
     useEffect(()=>{
         setLikeCheck(props.liked);
@@ -16,14 +16,14 @@ const LikeButton = (props) => {
     
     useEffect(()=>{
         if(likeCheck){
-            console.log(likeCheck.indexOf(props.id));
             if(likeCheck.indexOf(props.id) >= 0){
                 setIsLiked(true);
+                setIsLoading(false);
             }  
         }        
-    },[likeCheck]);
+    },[]);
 
-    useEffect(()=>{},[isLoading])
+    useEffect(()=>{},[isLoading, isLiked])
 
 
     
