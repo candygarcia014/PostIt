@@ -110,7 +110,7 @@ const Forum = () => {
         </Col> */}
       </Row>
 
-      <BackToTop />
+      {/* <BackToTop /> */}
     </Container>
   );
 };

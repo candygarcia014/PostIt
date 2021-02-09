@@ -98,7 +98,7 @@ const PostPage = () => {
         </Row>
       </Container>
 
-      <BackToTop />
+      {/* <BackToTop /> */}
     </Container>
   );
 };
