@@ -57,10 +57,10 @@ const PostCard = (props) => {
                 className="mb-2 text-muted meta-data-date-time meta-data">
                 <span className="meta-data-username">{user.username}</span> | {props.date} 
             </Card.Subtitle>
-            <Card.Text>
+            <Card.Body style={{height:'15rem'}}>
                 <PostImage image={props.image}/>
                 {truncatedPost}
-            </Card.Text>
+            </Card.Body>
             <ButtonGroup className="comment-share-button" >
             {
             props.liked ?
