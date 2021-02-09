@@ -100,6 +100,7 @@ const Forum = () => {
             
           ))}
         </Col>
+        
 
         {/* right side widgets */}
         {/* <Col xs={12} sm={12} lg={2}>
