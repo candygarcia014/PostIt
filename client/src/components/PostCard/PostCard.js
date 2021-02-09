@@ -32,7 +32,7 @@ const PostCard = (props) => {
     };
     
     // This should be postid not user info!!
-    if(!userInfo) return <h1>Loading...</h1>
+    if(!userInfo) return <h1 style = {{color:"whitesmoke"}}>Loading...</h1>
     const { image } = userInfo;
 
 
