@@ -1,14 +1,13 @@
 .Card.Body {
-position: absolute;
+/* position: absolute; */
 width: 676px;
 height: 369px;
 left: calc(50% - 676px/2 - 19px);
 top: 282px;
-background: #FFFFFF;
 color: #4d4d4d;
-border: 1px solid rgba(0, 0, 0, 0.4);
+/* border: 1px solid rgba(0, 0, 0, 0.4); */
 box-sizing: border-box;
-box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.25);
+/* box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.25); */
 border-radius: 3px;
 }
 
@@ -23,9 +22,11 @@ h1 {
 }
 
 .our-story-text {
-    color: #4d4d4d;
+    color: #898989;
 }
 
 .dev-name {
     color: #898989;
+    /* position: relative; */
+    /* left: 10px; */
 }

@@ -9,7 +9,7 @@ import '../../developers.json'
 const DevCard = (props) => {
     return (
         
-        <Card className="dev-card" style={{maxHeight: "20rem !important", maxWidth: "50rem" }}>
+        <Card className="dev-card" style={{maxHeight: "10rem !important", maxWidth: "20rem" }}>
         
             <Card.Body>
                 {/* <Card.Title>{props.name}</Card.Title> */}

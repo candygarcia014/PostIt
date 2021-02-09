@@ -11,7 +11,7 @@ class DevInfoButton extends React.Component {
         let { showing } = this.state;
             return (
             <>
-            <button className="fa fa-plus-square" onClick={() => this.setState({ showing: !showing })}></button>
+            <button className="fa fa-plus-square" id="dev-btn" onClick={() => this.setState({ showing: !showing })}></button>
               <div>
             { !showing 
                     ? <DevCard 
