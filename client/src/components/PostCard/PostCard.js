@@ -24,15 +24,6 @@ const PostCard = (props) => {
     useEffect(() => {
     }, []);
 
-    // const handleShare = (id) => {
-    // const getUrl = window.location
-    // var baseUrl = getUrl.protocol + "//" + getUrl.host + '/post/' + id;
-    // console.log(baseUrl)
-
-    // document.querySelector("#baseUrl")
-    // alert('share this link    ' + baseUrl) 
-
-    // }
 
     useEffect(()=>{},[props.image]);
 
