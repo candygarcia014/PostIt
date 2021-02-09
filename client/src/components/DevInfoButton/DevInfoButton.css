@@ -13,14 +13,13 @@ button {
             transform: rotate(180deg);
   }
 
-  button:focus{
+  button:focus {
     border-color:transparent!important;
     outline:none;
    }
 
   .fa-plus-square {
       color: black;
-      
   }
 
   button.button {
