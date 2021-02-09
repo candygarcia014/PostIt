@@ -68,18 +68,11 @@ const Forum = () => {
               <CategoryMobile />
             </Col> */}
           </Row>
-          <Row>
-            <Col xs={12}></Col>
-          </Row>
         </Col>
 
         {/* posts */}
-        <Col xs={12} sm={12} lg={8}>
-          <Row>
-            <Col xs={12}>
-              {/* <MakePost user={username.id} getAllPost={getAllPost} /> */}
-            </Col>
-          </Row>
+        <Col xs={12} sm={12} lg={12}>
+
           {/* //these are the requirements for the posts */}
           {data.map(({ title, body, user, date, _id, image }) => (
             <Row>
@@ -103,11 +96,11 @@ const Forum = () => {
         </Col>
 
         {/* right side widgets */}
-        <Col xs={12} sm={12} lg={2}>
+        {/* <Col xs={12} sm={12} lg={2}>
           <Row>
             <Col xs={12}></Col>
           </Row>
-        </Col>
+        </Col> */}
       </Row>
 
       <BackToTop />
