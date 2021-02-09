@@ -1,5 +1,4 @@
 import React from 'react';
-import { BsFillPlusSquareFill } from 'react-icons/fa';
 import "./DevInfoButton.css";
 import DevCard from './../DevCard/DevCard'; 
 
@@ -11,7 +10,9 @@ class DevInfoButton extends React.Component {
         render() {
         let { showing } = this.state;
             return (
-            <button className="fa fa-plus-square" onClick={() => this.setState({ showing: !showing })}>
+            <>
+            <button className="fa fa-plus-square" onClick={() => this.setState({ showing: !showing })}></button>
+              <div>
             { !showing 
                     ? <DevCard 
                     name={this.props.name}
@@ -19,12 +20,10 @@ class DevInfoButton extends React.Component {
                     linkedin={this.props.linkedin} />
                     : null
                 }
-            </button>
+            </div> 
+            </>
       )
     }
   }
-
-
-  
 
 export default DevInfoButton;
