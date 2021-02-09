@@ -37,15 +37,15 @@ const PostCard = (props) => {
 
 
 
-    const handleShare = (id) => {
-    const getUrl = window.location
-    var baseUrl = getUrl.protocol + "//" + getUrl.host + '/post/' + id;
-    console.log(baseUrl)
+    // const handleShare = (id) => {
+    // const getUrl = window.location
+    // var baseUrl = getUrl.protocol + "//" + getUrl.host + '/post/' + id;
+    // console.log(baseUrl)
 
-    document.querySelector("#baseUrl")
-    alert('share this link    ' + baseUrl) 
+    // document.querySelector("#baseUrl")
+    // alert('share this link    ' + baseUrl) 
 
-    }
+    // }
 
     const handleComment = e =>{
         const id  = e.target.getAttribute("data-id");

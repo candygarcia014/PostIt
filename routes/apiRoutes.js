@@ -70,7 +70,7 @@ router.post("/posts/:id", (req, res) => {
       { _id: id },
       { $push: { userPosts: data.id } },
       { new: true }
-    ).then((res) => {
+    ).then((data) => {
       return res.status(200).json("posted");
     });
   });
