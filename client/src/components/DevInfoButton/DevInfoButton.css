@@ -1,15 +1,26 @@
 button {
+    background-color: transparent;
+    border-color: transparent;
+    outline: none;
+    background: none;
     border-radius: 20%;
     -webkit-transition: -webkit-transform .5s ease-in-out;
             transition:         transform .5s ease-in-out;
   }
+  
   button:hover {
     -webkit-transform: rotate(180deg);
             transform: rotate(180deg);
   }
 
+  button:focus{
+    border-color:transparent!important;
+    outline:none;
+   }
+
   .fa-plus-square {
       color: black;
+      
   }
 
   button.button {

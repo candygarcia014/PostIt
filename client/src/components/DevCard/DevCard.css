@@ -1,11 +1,12 @@
 .dev-card {
    
-    background: #FFFFFF;
+    /* background: #FFFFFF; */
     box-sizing: border-box;
     /* box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.25); */
     border-radius: 12px;
     color: #898989;
     background-color: #171717;
+    border-color: transparent;
     text-align: center;
     margin-top: 2rem;
     margin-bottom: 2rem;
