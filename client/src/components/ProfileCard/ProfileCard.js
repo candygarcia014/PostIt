@@ -66,7 +66,7 @@ function ProfileCard() {
             {/* User Photo */}
             <Row>
                 <Col xs={12}> 
-                    <Avatar image={image} style={{"max-height":"250px", "max-width": "250px", "height":"100%", }}/>
+                    <Avatar image={image} />
                     <PhotoModal />
                 </Col>
             </Row>
