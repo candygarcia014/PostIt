@@ -15,11 +15,6 @@ const postsSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: "User"
     },
-    totalBolts: {
-        type: Number,
-        required: false,
-        default: 0
-    },
     date: {
         type: Date,
         default: Date.now,
@@ -34,7 +29,10 @@ const postsSchema = new Schema({
         type: Number,
         required: true,
         default: 0
-    }
+    },
+    image: {
+        type: String
+    },
   
 });
 

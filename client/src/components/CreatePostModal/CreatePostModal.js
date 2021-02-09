@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Component } from "react";
 import { Modal, Col, Row, Container, Button, Form } from "react-bootstrap";
 import DropdownMultiselect from "react-multiselect-dropdown-bootstrap";
 import Api from "../../utils/Api";
@@ -8,9 +8,12 @@ import "./CreatePostModal.css";
 import MakePost from "../MakePost/MakePost.js";
 import API from "../../utils/Api";
 
+
+
+
 const CreatePostModal = ({ user, getAllPost }) => {
   const [show, setShow] = useState(false);
-
+  const [selectedFile, setSelectedFile] = useState({});
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const [title, setTitle] = useState("");
@@ -29,19 +32,38 @@ const CreatePostModal = ({ user, getAllPost }) => {
   };
 
   //submit onclick function on "submmit buotton on post card"
-  const submit = e =>{
+  const submit = (e) =>{
     e.preventDefault();
     const data = {
         body:text, title, user,
     }
-    console.log(data);
     const { id } = decode(localStorage.getItem("token"));
-    console.log(data, id)
-     Api.createPosts(data, id);
+     Api.createPosts(data, id).then(res=>{
+        console.log(res.data._id);
+        let postId=res.data._id;
+        Upload(postId);
+     });
      setTitle("");
      setText("");
      getAllPost();
-}
+  }
+
+  const Upload = (postId) => {
+    const data = new FormData();
+    data.append("file", selectedFile);
+    Api.uploadPhotoPost(data, postId).then(x => {})
+          .catch((err) => {
+        // then print response status
+        alert("upload fail");
+        console.log(err);
+      });
+  }
+
+  const onChangeHandler = (event) => {
+        var file = event.target.files[0];
+        setSelectedFile(file);
+      };    
+
 
   return (
     <>
@@ -82,9 +104,11 @@ const CreatePostModal = ({ user, getAllPost }) => {
                 placeholder="Tags (select up to 3)"
               />
             </Col>
+
+            {/* S3 File Upload */}
             <Col xs={4}>
               <Form.Group>
-                <Form.File id="exampleFormControlFile1" />
+                <Form.File id="exampleFormControlFile1" onChange={onChangeHandler}/>
               </Form.Group>
             </Col>
             {/* submit button to create a new post */}

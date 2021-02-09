@@ -1,11 +1,10 @@
-import React, { useState } from "react";
-
 // Trunkcated/Extended Post on a new page
-
+import React, { useState } from "react";
 import "./PostCardFull.css";
 import Button from "react-bootstrap/Button";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
-import {Card, Row, Col} from "react-bootstrap";
+import { Card, Row, Col } from "react-bootstrap";
+import LikeButton from '../LikeButton/LikeButton'
 
 const PostCardFull = (props) => {
   const [user, setUser] = useState(props.user.username);
@@ -26,6 +25,17 @@ const PostCardFull = (props) => {
             </Card.Subtitle>
             <Card.Text>{props.body}</Card.Text>
             <ButtonGroup className="comment-share-button">
+              {/* This does not */}
+              {props.liked ? (
+                <LikeButton
+                  key={props.id}
+                  id={props.id}
+                  liked={props.liked}
+                  curruser={props.curruser}
+                  setLiked={props.setLiked}
+                  getUserLikes={props.getUserLikes}
+                />
+              ) : null}
               {/* <Button as="input" type="button" value="Comment" data-id={props.id}/>{' '} */}
               {/* need to add popout  */}
               {/* <Button onClick={ handleShare }  as="input" type="submit" value="Share" />{' '} */}

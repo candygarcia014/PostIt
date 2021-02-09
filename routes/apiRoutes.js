@@ -63,7 +63,8 @@ router.get("/user/:id", (req, res) => {
 router.post("/posts/:id", (req, res) => {
   const { id } = req.params;
   console.log(id);
-  Posts.create(req.body).then((data) => {
+  Posts.create(req.body).then(async (data) => {
+    await res.send(data);
     console.log(data);
     User.findOneAndUpdate(
       { _id: id },
@@ -73,7 +74,6 @@ router.post("/posts/:id", (req, res) => {
       return res.status(200).json("posted");
     });
   });
-  console.log(req.body);
 });
 //route to find all posts and sends back to user/frontend
 router.get("/posts", (req, res) => {
@@ -82,8 +82,40 @@ router.get("/posts", (req, res) => {
     .sort({ date: -1 })
     .then((data) => res.json(data));
 });
+//post photo upload
+router.post("/upload/post/:postId", async (req, res) => {
+  const { postId } = req.params;
+  // Sending error back if no file was uploaded
+  if (!req.files) {
+    return res.status(400).send("No file was uploaded.");
+  }
+  // references the file uploaded from the input field with the 'name' attribute specified following 'req.files.'
+  const uploadFile = req.files.file;
+  console.log(req.files);
+  // setting up S3 upload parameters
+  const params = {
+    Body: uploadFile.data, // data from uploaded file
+    Bucket: keys.s3bucket, // bucket name
+    Key: `${Date.now()}-${uploadFile.name}`, // file name to use for S3 bucket
+  };
+  // uploading file to the bucket
+  s3.upload(params, (err, response) => {
+    if (err) throw err;
+    Posts.findOneAndUpdate(
+      { _id: postId },
+      { image: response.Location },
+      { new: true }
+    ).then((x) => x);
+    console.log(`File uploaded successfully at ${response.Location}`);
+    // terminating the req/res cycle by sending a JSON object with the uploaded
+    // file path AND any date sent along with the upload... this is where you
+    // could write to your db if needed, now that you have the url path for the
+    // newly uploaded file!
+    res.json({ url: response.Location, data: req.body });
+  });
+});
 // Photo Upload
-router.post("/upload/:userId", async (req, res) => {
+router.post("/upload/user/:userId", async (req, res) => {
   const { userId } = req.params;
   // Sending error back if no file was uploaded
   if (!req.files) {
@@ -114,6 +146,7 @@ router.post("/upload/:userId", async (req, res) => {
     res.json({ url: response.Location, data: req.body });
   });
 });
+
 //route to get individual post and returns data for that post
 router.get("/posts/:id", (req, res) => {
   Posts.findById(req.params.id)

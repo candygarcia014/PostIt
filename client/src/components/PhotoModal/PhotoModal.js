@@ -5,6 +5,9 @@ import "../PhotoModal/PhotoModal.css";
 import decode from 'jwt-decode';
 // import { Alert } from "reactstrap";
 import api from "../../utils/Api.js"
+
+
+
 class PhotoModal extends Component {
   constructor(props) {
     super(props);

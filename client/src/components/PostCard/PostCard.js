@@ -1,6 +1,6 @@
 // Displayed Posts component on the Forum page!!
 
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import './PostCard.css';
 import { Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
@@ -8,12 +8,34 @@ import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import Card from 'react-bootstrap/Card';
 import CommentModal from '../CommentModal/CommentModal.js';
 import LikeButton from '../LikeButton/LikeButton'
+import PostImage from '../PostImage/PostImage';
+import Api from "../../utils/Api";
+import decode from 'jwt-decode';
+
+
 
 const PostCard = (props) => {    
     const [postid, setPostid] = useState(0);    
     const [show, setShow] = useState(false);
     const [user, setUser] = useState(props.user)
     const truncatedPost = props.body?.substring(0, 200) + "...";
+    const[userInfo, setUserInfo]=useState();
+
+    useEffect(() => {
+        getUser();
+    }, [userInfo]);
+
+    const getUser = async () => {
+        const { id } = decode(localStorage.getItem("token"));
+        const { data } = await Api.name(id);
+        setUserInfo(data);
+    };
+    
+    // This should be postid not user info!!
+    if(!userInfo) return <h1>Loading...</h1>
+    const { image } = userInfo;
+
+
 
     const handleShare = (id) => {
     const getUrl = window.location
@@ -46,10 +68,10 @@ const PostCard = (props) => {
                 <span className="meta-data-username">{user.username}</span> | {props.date} 
             </Card.Subtitle>
             <Card.Text>
+                <PostImage image={props.image}/>
                 {truncatedPost}
             </Card.Text>
             <ButtonGroup className="comment-share-button">
-            <Button variant="outline-dark" as="input" type="button" value="Comments" data-id={props.id} onClick={handleComment}/>{' '}
             {
             props.liked ?
             <LikeButton
@@ -62,6 +84,7 @@ const PostCard = (props) => {
             />
             :null
             }
+            <Button variant="outline-dark" as="input" type="button" value="Comments" data-id={props.id} onClick={handleComment} className='CommentBtn'/>{' '}
 
             </ButtonGroup>           
         </Card.Body>
