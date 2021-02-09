@@ -60,6 +60,7 @@ const CreatePostModal = ({ user, getAllPost }) => {
   const Upload = e => {
     e.preventDefault();
     console.log(e.target.file[0]);
+    ReactS3.upload(e.target.files[0])
 
 
   }
