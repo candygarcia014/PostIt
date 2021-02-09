@@ -5,5 +5,5 @@ const keys = {
 	"s3secret": process.env.S3SECRET,
 };
 
-console.log('track please')
+// console.log('track please')
 module.exports = keys;
