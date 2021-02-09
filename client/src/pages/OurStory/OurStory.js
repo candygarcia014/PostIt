@@ -12,7 +12,7 @@ const OurStory = (props) => {
     <Container>
 
       <div>
-        <h1 style={{ color: "#c4c4c4" }}>Our Story</h1>
+        <h1 style={{ color: "white" }}>Our Story</h1>
       </div>
 
       {/* Card for Our Story */}
@@ -23,7 +23,7 @@ const OurStory = (props) => {
       </Row>
 
       <div>
-        <h1 style={{ width: "33%", color: "#c4c4c4" }}>Meet the Developers!</h1>
+        <h1 style={{ width: "33%", color: "white" }}>Meet the Developers!</h1>
       </div>
 
 
@@ -31,8 +31,9 @@ const OurStory = (props) => {
         <Row className={i % 2 === 0 ? "" : "d-flex flex-row-reverse"} style={{height:'15rem'}}>
           <Col xs={3}>
             <DevImage source={dev.image} className={i % 2 === 0 ? "dev-image-left" : "dev-image-right"} />
-            <div>
-              {dev.name}<DevInfoButton
+            <div className="devInfo">
+              <h1 style={{color: "white"}}>{dev.name}</h1>
+              <DevInfoButton 
               name={dev.name}
               github={dev.github}
               linkedin={dev.linkedin}/>

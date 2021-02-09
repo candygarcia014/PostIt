@@ -4,7 +4,7 @@ width: 676px;
 height: 369px;
 left: calc(50% - 676px/2 - 19px);
 top: 282px;
-color: #4d4d4d;
+color: #c4c4c4;
 /* border: 1px solid rgba(0, 0, 0, 0.4); */
 box-sizing: border-box;
 /* box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.25); */
@@ -16,17 +16,7 @@ border-radius: 3px;
     align-content: flex-end;
 }
 
-h1 {
-    margin-bottom: 10rem;
-    color: #4d4d4d;
-}
 
-.our-story-text {
-    color: #898989;
-}
-
-.dev-name {
-    color: #898989;
-    /* position: relative; */
-    /* left: 10px; */
+.devInfo {
+    display:flex; flex-direction:row;
 }
