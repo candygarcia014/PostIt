@@ -89,14 +89,15 @@ function ProfileCard() {
             {/* User Bio*/}
             <Row xs={8}>
                 <Col xs={6}>
-                    <DisplayUserPosts/>
-                    {/* <div className="Bio">
+                    
+                    <div className="Bio">
                     <Card className="BioCard"> 
-                        
+                    <Card.Header>About Me</Card.Header>
                         <InputGroup className="mb-3 d-flex">
                             <FormControl className="bioForm"
             
-                            placeholder={userInfo.bio}
+                            placeholder="Update your about me here"
+                            text={userInfo.bio}
                             // input={userInfo.bio}
                             aria-label="User Bio"
                             onChange={onChangeHandler}
@@ -105,12 +106,12 @@ function ProfileCard() {
                         <Button variant="outline-secondary" className="updateBtn" onClick={UpdateBio}>Update </Button>
                     </Card>
                         
-                    </div>  */}
+                    </div> 
                 </Col>
-                <Col xs={6}>
-                    <DisplayUserLikes/>
+                {/* <Col xs={6}>
+                    <DisplayUserPosts/>
 
-                </Col>
+                </Col> */}
             </Row>
 
             <Row>
