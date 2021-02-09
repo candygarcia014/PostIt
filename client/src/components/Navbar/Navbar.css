@@ -35,6 +35,7 @@
     font-family: 'Proza Libre', sans-serif;
     font-size: smaller;
 
+
 }
 
 .RegisterBtn {
@@ -46,5 +47,7 @@
 .RegisterBtn:hover {
     color: lightgrey;
     font-family: 'Proza Libre', sans-serif;
+    background: rgba( 221, 221, 221, 0.1 );
+
 
 }

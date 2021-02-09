@@ -55,7 +55,7 @@ const Login = (props) => {
         </FormGroup>
       
       </Row>
-      <Button onClick={handleSubmit} >Log in</Button>
+      <Button variant="outline-secondary" onClick={handleSubmit} className="LoginBtn">Log in</Button>
     </Form>
   );
 };
