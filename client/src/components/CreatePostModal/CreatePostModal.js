@@ -45,13 +45,14 @@ const CreatePostModal = ({ user, getAllPost }) => {
      });
      setTitle("");
      setText("");
-     getAllPost();
   }
 
   const Upload = (postId) => {
     const data = new FormData();
     data.append("file", selectedFile);
-    Api.uploadPhotoPost(data, postId).then(x => {})
+    Api.uploadPhotoPost(data, postId).then(x => {
+      getAllPost();
+    setShow(false)})
           .catch((err) => {
         // then print response status
         alert("upload fail");
