@@ -86,8 +86,8 @@ function ProfileCard() {
             </Row>
             {/* User Bio*/}
             <Row>
-                <Col xs={12}>
-                    <div className="Bio">
+                <Col xs={6}>
+                    {/* <div className="Bio">
                     <Card className="BioCard"> 
                         
                         <InputGroup className="mb-3 d-flex">
@@ -102,7 +102,10 @@ function ProfileCard() {
                         <Button variant="outline-secondary" className="updateBtn" onClick={UpdateBio}>Update </Button>
                     </Card>
                         
-                    </div> 
+                    </div>  */}
+                </Col>
+                <Col xs={6}>
+                    
                 </Col>
             </Row>
 
