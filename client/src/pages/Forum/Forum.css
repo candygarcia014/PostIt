@@ -8,13 +8,16 @@
 
 @media only screen and (min-width: 991px) {
     .category-mobile{
-        display: none;
+
+        /* display: none; */
     }
   }
 
 @media only screen and (max-width: 991px) {
 .category-desktop{
-    display: none;
+    /* display: none; */
+    position: relative;
+
 }
 }
 

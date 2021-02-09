@@ -57,7 +57,7 @@ const Forum = () => {
     <Container fluid className="forum-container">
       <Row>
         {/* left side widgets */}
-        <Col xs={12} sm={12} lg={2}>
+        <Col xs={2} sm={2} lg={2}>
           <Row>
             <Col xs={12} className="category-desktop">
               {/* <CategoryWidget /> */}
@@ -71,7 +71,7 @@ const Forum = () => {
         </Col>
 
         {/* posts */}
-        <Col xs={12} sm={12} lg={12}>
+        <Col xs={12} sm={12} lg={8}>
 
           {/* //these are the requirements for the posts */}
           {data.map(({ title, body, user, date, _id, image }) => (
