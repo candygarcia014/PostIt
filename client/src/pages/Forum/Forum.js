@@ -10,6 +10,7 @@ import Api from "../../utils/Api";
 import Tags from "../../components/Tags/Tags";
 // import CommentModal from '../CommentModal/CommentModal.js';
 import CreatePostModal from "../../components/CreatePostModal/CreatePostModal.js";
+import { CloudWatchEvents } from "aws-sdk";
 
 //fake data placeholders
 
@@ -64,10 +65,14 @@ const Forum = () => {
    
 //useEffect prevents it from running more than once 
   useEffect(() => {
-    getAllPost();
-    getUserLikes();
+    try{
+      getAllPost();
+      getUserLikes();
+    } catch(err){
+      console.log(err);
+    }
     //run what is in useEffect again / refresh the data and poppulate new posts at the top. 
-  }, []);
+  }, [username]);
 
   useEffect(()=>{},[data])
   //this is the API to get all posts on forum pg

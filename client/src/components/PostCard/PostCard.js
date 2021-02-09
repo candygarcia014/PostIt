@@ -21,6 +21,7 @@ const PostCard = (props) => {
     const truncatedPost = props.body?.substring(0, 200) + "...";
     const[userInfo, setUserInfo]=useState();
 
+
     useEffect(() => {
         getUser();
     }, [userInfo]);
@@ -46,6 +47,9 @@ const PostCard = (props) => {
     // alert('share this link    ' + baseUrl) 
 
     // }
+
+    useEffect(()=>{},[props.image]);
+
 
     const handleComment = e =>{
         const id  = e.target.getAttribute("data-id");
