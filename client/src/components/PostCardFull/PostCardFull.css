@@ -34,7 +34,7 @@
 }
 
 #PostBody {
-    
+    margin: 0 auto;
     background: rgba( 221, 221, 221, 0.5 );
     box-shadow: -7px 10px 10px 5px rgba(0, 0, 0, 0.5);
     backdrop-filter: blur( 14.5px );
