@@ -10,6 +10,8 @@ import decode from 'jwt-decode';
 import '../ProfileCard/ProfileCard.css'
 import Avatar from './Avatar';
 import PhotoModal from '../PhotoModal/PhotoModal';
+import DisplayUserLikes from '../DisplayUserLikes/DisplayUserLikes';
+import DisplayUserPosts from '../DisplayUserPosts/DisplayUserPosts';
 
 
 
@@ -85,8 +87,9 @@ function ProfileCard() {
                 </Col>
             </Row>
             {/* User Bio*/}
-            <Row>
+            <Row xs={8}>
                 <Col xs={6}>
+                    <DisplayUserPosts/>
                     {/* <div className="Bio">
                     <Card className="BioCard"> 
                         
@@ -105,7 +108,8 @@ function ProfileCard() {
                     </div>  */}
                 </Col>
                 <Col xs={6}>
-                    
+                    <DisplayUserLikes/>
+
                 </Col>
             </Row>
 

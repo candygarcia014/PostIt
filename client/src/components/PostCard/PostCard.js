@@ -59,7 +59,7 @@ const PostCard = (props) => {
     const handleShow = () => setShow(true);
     return (
         <>
-        <Card className="p-0 my-2" id="PostBody">
+        <Card className="p-0 m-2" id="PostBody">
         <Card.Body>
             <Link to={`/post/${props.id}`} className="LinkToPost"><Card.Title>{props.title}</Card.Title></Link>
 

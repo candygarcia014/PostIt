@@ -71,13 +71,14 @@ const Forum = () => {
         </Col>
 
         {/* posts */}
-        <Col xs={12} sm={12} lg={10}>
+        <Col xs={12} sm={12} lg={10} style={{display:'flex', flexFlow:'row wrap'}}>
 
           {/* //these are the requirements for the posts */}
           {data.map(({ title, body, user, date, _id, image }) => (
-            <Row>
-              <Col xs={12}>
+            
+              
                 <PostCard
+                  className='StyledPostCard'
                   key={_id}
                   id={_id}
                   title={title}
@@ -90,8 +91,8 @@ const Forum = () => {
                   getUserLikes={getUserLikes}
                   image={image}
                 />
-              </Col>
-            </Row>
+              
+            
           ))}
         </Col>
 
