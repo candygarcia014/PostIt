@@ -10,6 +10,8 @@
     color: #343a40;
 }
 
+
+
 .meta-data {
     font-size: small;
 }
@@ -56,11 +58,13 @@
 }
 
 .LinkToPost {
-    color: #343a40;
+    color: white;
 }
 .LinkToPost:hover {
     color: #343a40;
 }
 .LinkToPost:visited {
-    color: #cecece;
+    color: #343a40;
+
+  
 }
