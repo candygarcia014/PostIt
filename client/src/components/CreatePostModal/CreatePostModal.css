@@ -6,3 +6,8 @@
     border-radius: 5px !important;
     border: none;
 }
+
+#CreatePostBtn:hover {
+    background: none;
+
+}

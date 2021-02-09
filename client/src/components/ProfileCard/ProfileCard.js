@@ -10,6 +10,8 @@ import decode from 'jwt-decode';
 import '../ProfileCard/ProfileCard.css'
 import Avatar from './Avatar';
 import PhotoModal from '../PhotoModal/PhotoModal';
+import DisplayUserLikes from '../DisplayUserLikes/DisplayUserLikes';
+import DisplayUserPosts from '../DisplayUserPosts/DisplayUserPosts';
 
 
 
@@ -85,9 +87,10 @@ function ProfileCard() {
                 </Col>
             </Row>
             {/* User Bio*/}
-            <Row>
-                <Col xs={12}>
-                    <div className="Bio">
+            <Row xs={8}>
+                <Col xs={6}>
+                    <DisplayUserPosts/>
+                    {/* <div className="Bio">
                     <Card className="BioCard"> 
                         
                         <InputGroup className="mb-3 d-flex">
@@ -102,7 +105,11 @@ function ProfileCard() {
                         <Button variant="outline-secondary" className="updateBtn" onClick={UpdateBio}>Update </Button>
                     </Card>
                         
-                    </div> 
+                    </div>  */}
+                </Col>
+                <Col xs={6}>
+                    <DisplayUserLikes/>
+
                 </Col>
             </Row>
 

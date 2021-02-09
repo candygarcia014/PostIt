@@ -68,6 +68,7 @@ const PostPage = () => {
               curruser={username.id}
               setLiked={setLiked}
               getUserLikes={getUserLikes}
+              image={postData.image}
 
             />
           </Col>

@@ -20,16 +20,19 @@
     max-height: 200px;
     height: 100vw;
     width: 100vw;
+    object-fit: cover;
 
 }
 
 
 .Username {
+    color: white;
     margin-top: 2rem;
     text-align: center;
     position: relative;
 }
 .FullName {
+    color: white;
     margin-top: 4rem;
     text-align: center;
     position: relative;
