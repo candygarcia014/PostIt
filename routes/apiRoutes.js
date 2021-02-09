@@ -228,6 +228,11 @@ router.post("/user/:userId/unlike/:postId", async (req, res) => {
   await post.save();
 });
 
+router.get("/post/tag/:query", (req,res)=>{
+  Posts.find({dataTags: {$regex: req.params.query}}).
+  then((data) => res.json(data));
+})
+
 
 
 router.use((req, res) => {
