@@ -30,7 +30,7 @@ const Login = (props) => {
     <Form>
       <Row form>
         <FormGroup>
-          <Label for="username">Username</Label>
+          <Label for="username" style = {{color:"whitesmoke"}}>Username</Label>
           <Input
             type="username"
             name="username"
@@ -43,7 +43,7 @@ const Login = (props) => {
       </Row>
       <Row form>
         <FormGroup>
-          <Label for="password">Password </Label>
+          <Label for="password" style = {{color:"whitesmoke"}}>Password </Label>
           <Input
             type="password"
             name="password"
@@ -55,7 +55,7 @@ const Login = (props) => {
         </FormGroup>
       
       </Row>
-      <Button onClick={handleSubmit}>Log in</Button>
+      <Button onClick={handleSubmit} >Log in</Button>
     </Form>
   );
 };
