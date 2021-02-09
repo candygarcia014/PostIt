@@ -52,6 +52,7 @@ const CreatePostModal = ({ user, getAllPost }) => {
      });
      setTitle("");
      setText("");
+     getAllPost();
   }
 
   const Upload = (postId) => {

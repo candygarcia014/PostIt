@@ -21,6 +21,7 @@
 }
 
 .m-backtotop:hover {
-  color: #343a40;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
   border-color: #343a40;
 }

@@ -61,7 +61,7 @@ const PostCard = (props) => {
                 <PostImage image={props.image}/>
                 {truncatedPost}
             </Card.Text>
-            <ButtonGroup className="comment-share-button">
+            <ButtonGroup className="comment-share-button" >
             {
             props.liked ?
             <LikeButton
