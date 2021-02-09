@@ -1,4 +1,5 @@
-button {
+#dev-btn {
+    /* position: absolute; */
     background-color: transparent;
     border-color: transparent;
     outline: none;
@@ -8,12 +9,12 @@ button {
             transition:         transform .5s ease-in-out;
   }
   
-  button:hover {
+  #dev-btn:hover {
     -webkit-transform: rotate(180deg);
             transform: rotate(180deg);
   }
 
-  button:focus {
+  #dev-btn:focus {
     border-color:transparent!important;
     outline:none;
    }
@@ -24,6 +25,6 @@ button {
 
   button.button {
     display: inline-flex;
-    align-items: center;
+    align-self: flex-start;
     justify-content: center;
   }
