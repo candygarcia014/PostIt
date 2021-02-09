@@ -24,6 +24,7 @@ const PostCard = (props) => {
     useEffect(() => {
     }, []);
 
+   
 
     useEffect(()=>{},[props.image]);
 
@@ -43,10 +44,12 @@ const PostCard = (props) => {
         <Card className="p-0 m-2" id="PostBody">
         <Card.Body>
             <Link to={`/post/${props.id}`} className="LinkToPost"><Card.Title>{props.title}</Card.Title></Link>
+            
 
             <Card.Subtitle 
                 className="mb-2 text-muted meta-data-date-time meta-data">
-                <span className="meta-data-username">{user.username}</span> | {props.date} 
+                <Link to={`/user/${props.id}`} className="meta-data-username">{user.username}</Link>
+                | {props.date} 
             </Card.Subtitle>
             <Card.Body style={{height:'15rem'}}>
                 <PostImage image={props.image}/>
