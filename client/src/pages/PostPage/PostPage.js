@@ -80,7 +80,7 @@ const PostPage = () => {
       <Container>
         {commentData.map(({ body, user, date, _id }) => (
           <Row key={_id}>
-            <Col xs={12}>
+            <Col xs={6}>
               <Comments
                 commentId={_id}
                 commentDate={date}
@@ -92,7 +92,7 @@ const PostPage = () => {
         ))}
 
         <Row>
-          <Col xs={12}>
+          <Col xs={6}>
             <MakeComment postId={postId} setCommentData={setCommentData} />
           </Col>
         </Row>

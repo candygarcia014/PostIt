@@ -14,7 +14,7 @@
 }
 
 .CommentBtn {
-    float: right !important;
+    float: center !important;
     border-radius: 5px !important;
     box-shadow: -1px 2px 2px 1px rgba(0, 0, 0, 0.5);
 }
