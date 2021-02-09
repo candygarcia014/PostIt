@@ -12,3 +12,8 @@
     background: none;
 
 }
+.post-button{
+    color: white !important;
+    font-family: 'Proza Libre', sans-serif;
+    font-size: smaller;
+}

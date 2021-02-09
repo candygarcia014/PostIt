@@ -124,7 +124,7 @@ const CreatePostModal = ({ user, getAllPost }) => {
             {/* submit button to create a new post */}
             <Col xs={4}>
               <Button
-                variant="secondary"
+                variant="outline-secondary"
                 type="submit"
                 className="post-button"
                 onClick={submit}
