@@ -68,7 +68,7 @@ const PostCard = (props) => {
                 <span className="meta-data-username">{user.username}</span> | {props.date} 
             </Card.Subtitle>
             <Card.Text>
-                <PostImage image={image}/>
+                <PostImage image={props.image}/>
                 {truncatedPost}
             </Card.Text>
             <ButtonGroup className="comment-share-button">

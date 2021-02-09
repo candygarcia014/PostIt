@@ -126,7 +126,7 @@ const Forum = () => {
             </Col>
           </Row>
           {/* //these are the requirements for the posts */}
-          {data.map(({ title, body, user, date, _id }) => (
+          {data.map(({ title, body, user, date, _id, image }) => (
             <Row>
               <Col xs={12}>
                 <PostCard
@@ -140,6 +140,7 @@ const Forum = () => {
                   curruser={username.id}
                   setLiked={setLiked}
                   getUserLikes={getUserLikes}
+                  image={image}
                 />
               </Col>
             </Row>
