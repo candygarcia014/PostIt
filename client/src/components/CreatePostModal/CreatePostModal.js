@@ -3,9 +3,6 @@ import { Modal, Col, Row, Container, Button, Form } from "react-bootstrap";
 import DropdownMultiselect from "react-multiselect-dropdown-bootstrap";
 import Api from "../../utils/Api";
 import decode from 'jwt-decode';
-// s3 Imports
-import ReactS3 from 'react-s3';
-import { uploadFile } from 'react-s3';
 
 import "./CreatePostModal.css";
 import MakePost from "../MakePost/MakePost.js";
