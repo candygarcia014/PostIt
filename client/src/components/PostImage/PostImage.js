@@ -12,7 +12,7 @@ function PostImage(props) {
         className="PostImage"
         alt=""
         />
-    {/* <img src={props.image} className="PostImage" alt=""/> */}
+    <img src={props.image} className="PostImage" alt=""/>
     </div>
   );
 }
