@@ -71,7 +71,7 @@ const Forum = () => {
         </Col>
 
         {/* posts */}
-        <Col xs={12} sm={12} lg={8}>
+        <Col xs={12} sm={12} lg={10}>
 
           {/* //these are the requirements for the posts */}
           {data.map(({ title, body, user, date, _id, image }) => (
