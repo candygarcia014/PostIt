@@ -65,7 +65,7 @@ class PhotoModal extends Component {
           <Modal.Header closeButton>
             <Modal.Title>Upload a Photo</Modal.Title>
           </Modal.Header>
-          <Modal.Body>
+          <Modal.Body className='userPhotoModal'>
             <Form>
               <Form.Group>
                 <Form.File
