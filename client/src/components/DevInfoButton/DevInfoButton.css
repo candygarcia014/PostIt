@@ -1,5 +1,5 @@
 #dev-btn {
-    /* position: absolute; */
+    
     background-color: transparent;
     border-color: transparent;
     outline: none;
@@ -20,7 +20,7 @@
    }
 
   .fa-plus-square {
-      color: black;
+      color: #c4c4c4;
   }
 
   button.button {
@@ -28,3 +28,7 @@
     align-self: flex-start;
     justify-content: center;
   }
+
+  /* .showingDiv {
+      overflow: hidden;
+  } */

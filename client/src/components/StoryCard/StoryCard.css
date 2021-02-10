@@ -1,11 +1,12 @@
 
 .story-card {
     display: block !important;
-    margin-left: 15vw;
+    margin-left: 4vw;
     margin-bottom: 2vw;
     margin-top: 2vw;
     min-height: 16rem;
     min-width: 40rem;
+    text-align: justify;
     color: #898989;
     background-color: transparent;
     outline-color: transparent;
